@@ -1,0 +1,10 @@
+#!/bin/zsh
+hc() {
+    herbstclient "$@"
+}
+echo owo
+if [[ $HOST == iris ]]; then
+    echo uwu
+    hc set frame_gap 5
+fi
+# vi:ft=sh

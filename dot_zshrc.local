@@ -1,0 +1,66 @@
+#!/bin/zsh
+#############################
+#                           #
+#       My zsh config       #
+#                           #
+#############################
+setopt nonomatch
+
+## History related settings
+HISTSIZE=5000000000000
+SAVEHIST=5000000000000
+
+## Ignore some commands
+## Kudos: https://unix.stackexchange.com/a/6104
+setopt HIST_IGNORE_SPACE
+
+####################
+# Configure prompt #
+####################
+
+## Colored user
+user_color=green
+if  [ $(id -u) = 0 ]; then
+    user_color=red
+fi
+zstyle ':prompt:grml:*:items:user' pre "%B%F{${user_color}}"
+zstyle ':prompt:grml:*:items:user' post '%b%f'
+
+## Blue host
+zstyle ':prompt:grml:*:items:host' pre '%B%F{blue}'
+zstyle ':prompt:grml:*:items:host' post '%b%f'
+
+## Setup a compact path
+grml_theme_add_token simplepath '[ %15<...<%1~%<< ] ' '%B%F{white}' '%f%b'
+zstyle ':prompt:grml:left:setup' items rc change-root user at host simplepath vcs percent
+
+##################
+# General config #
+##################
+
+## Command not found hook
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+## avoid reset shell
+ttyctl -f
+
+## arrow key autocomplete
+zstyle ':completion:*' menu select
+
+## rehash
+zstyle ':completion:*' rehash true
+
+## Source aliases
+source ~/.zshaliases
+
+## Source handy functions
+source ~/.zshfunctions
+
+## autocomplete aliases
+setopt COMPLETE_ALIASES
+
+## Show funny messages
+command fortune
+
+## Add .local/bin to $PATH
+export PATH=${PATH}:${HOME}/.local/bin:$(ruby -e 'print Gem.user_dir')/bin

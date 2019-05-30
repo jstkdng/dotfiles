@@ -1,0 +1,5 @@
+#!/bin/bash
+if [[ -n "${SSH_CLIENT}" ]]; then
+    tmux set -g status-bg blue
+    tmux set -g prefix C-a
+fi

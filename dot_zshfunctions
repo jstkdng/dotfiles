@@ -1,0 +1,10 @@
+function copy()
+{
+    command xclip -sel c < ${1}
+    echo "Copied file ${1} to clipboard!"
+}
+
+function downmp3()
+{
+    youtube-dl -x --audio-format=mp3 -o ${PWD}/%(title)s.%(ext)s $@
+}
