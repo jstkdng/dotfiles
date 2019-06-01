@@ -52,14 +52,16 @@ augroup resCur
     autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
-" Set colorscheme if X or is running
-if exists("$DISPLAY")
+" Color customization
+if &term=~'linux'
+    colorscheme darkblue
+else
     set termguicolors
     let g:airline_powerline_fonts = 1
     colorscheme jellybeans
-else
-    colorscheme darkblue
 endif
+
+" Set colorscheme if X or is running
 
 " ----------------------
 " Plugin configuration  |
