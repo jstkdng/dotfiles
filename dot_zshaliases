@@ -1,7 +1,6 @@
 #!/bin/zsh
 alias history="history 0"
 alias watchdirty="watch -x -t awk '/Dirty/||/Writeback:/{print}' /proc/meminfo"
-alias mountdisk="udisksctl mount -b"
 alias delet="shred -u -v"
 alias mountsec="encfs ~/Nextcloud/Secure ~/Secure"
 alias free="free --si"

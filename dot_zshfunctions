@@ -10,3 +10,8 @@ function downmp3()
 {
     youtube-dl -x --audio-format=mp3 -o ${PWD}/%(title)s.%(ext)s $@
 }
+
+function msmnt()
+{
+    udisksctl mount -b "$@" -o dmask=022,fmask=133
+}
