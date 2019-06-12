@@ -1,0 +1,10 @@
+<!--
+vi:ft=xml
+-->
+<driconf>
+    <device>
+        <application name="Chromium" executable="chromium">
+            <option name="allow_rgb10_configs" value="false" />
+        </application>
+    </device>
+</driconf>

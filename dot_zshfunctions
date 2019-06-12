@@ -11,15 +11,30 @@ function downmp3()
     youtube-dl -x --audio-format=mp3 -o ${PWD}/%(title)s.%(ext)s $@
 }
 
-function msmnt()
+function mnt-ms()
 {
-    udisksctl mount -b "$@" -o dmask=022,fmask=133
+    udisksctl mount -b "${@}" -o dmask=022,fmask=133
+}
+
+function mnt-sec()
+{
+    encfs ~/Nextcloud/secure ~/Secure "${@}"
 }
 
 function xmr-wallet()
 {
     monero-wallet-cli \
-        --config-file ${HOME}/.config/monero/wallet.conf \
-        --wallet-file ${HOME}/Nextcloud/Crypto/xmr/xmr \
+        --config-file ~/.config/monero/wallet.conf \
+        --wallet-file ~/Secure/crypto/xmr/xmr \
         "${@}"
+}
+
+function watchdirt()
+{
+    watch -x -t awk "/Dirty/||/Writeback:/{print}" /proc/meminfo
+}
+
+function screenshot()
+{
+    maim -m 1 -s ~/Pictures/$(date +%s).png
 }
