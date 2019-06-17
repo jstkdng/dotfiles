@@ -13,6 +13,8 @@ def main():
         "/usr/bin/compton",
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
         "/usr/bin/xss-lock -- betterlockscreen -l dim",
+        "/usr/lib/geoclue-2.0/demos/agent",
+        "/usr/bin/redshift-gtk",
         # Applets
         "/usr/bin/pa-applet",
         # General applications
