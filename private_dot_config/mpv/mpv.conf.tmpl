@@ -9,7 +9,7 @@
 #
 #
 # Configuration files are read system-wide from /usr/local/etc/mpv.conf
-# and per-{{ .chezmoi.group }} from ~/.config/mpv/mpv.conf, where per-{{ .chezmoi.group }} settings override
+# and per-user from ~/.config/mpv/mpv.conf, where per-user settings override
 # system-wide settings, all of which are overridden by the command line.
 #
 # Configuration file settings and the command line options use the same
@@ -56,14 +56,17 @@
 # Can cause performance problems with some drivers and GPUs.
 profile=gpu-hq
 scale=ewa_lanczossharp
-cscale=ewa_lanczossharp
+cscale=ewa_lanczossoft
 
 # Force video to lock on the display's refresh rate, and change video and audio
 # speed to some degree to ensure synchronous playback - can cause problems
 # with some drivers and desktop environments.
 video-sync=display-resample
-interpolation
-tscale=oversample
+interpolation=yes
+tscale=box
+tscale-window=sphinx
+tscale-radius=1.0
+tscale-clamp=0.0
 
 # Enable hardware decoding if available. Often, this does not work with all
 # video outputs, but should work well with default settings on most systems.
@@ -97,12 +100,9 @@ ytdl-format="(bestvideo[height<=?1080][vcodec!=vp9]+(bestaudio[acodec=opus]/best
 
 # Pretend to be a web browser. Might fix playback with some streaming sites,
 # but also will break with shoutcast streams.
-#{{ .chezmoi.group }}-agent="Mozilla/5.0"
+#user-agent="Mozilla/5.0"
 
 # cache settings
-#
-# Use 150MB input cache by default. The cache is enabled for network streams only.
-#cache-default=153600
 #
 # Use 150MB input cache for everything, even local files.
 #cache=153600
