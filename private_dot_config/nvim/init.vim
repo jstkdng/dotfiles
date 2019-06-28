@@ -53,16 +53,18 @@ augroup resCur
 augroup END
 
 " Color customization
-if &term=~'linux'
-    colorscheme darkblue
-else
-    set termguicolors
-    let g:airline_powerline_fonts=1
-    let g:airline_theme="distinguished"
-    colorscheme jellybeans
-endif
+set termguicolors
+let g:airline_powerline_fonts=1
+let g:airline_theme="distinguished"
+colorscheme jellybeans
 
-" Set colorscheme if X or is running
+" Remove colors if running under a tty
+if ( $RTERM == 'linux' )
+    colorscheme torte
+    set notermguicolors
+    set colorcolumn=0
+    au VimEnter * AirlineToggle
+endif
 
 " ----------------------
 " Plugin configuration  |

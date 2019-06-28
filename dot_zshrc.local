@@ -63,4 +63,8 @@ setopt COMPLETE_ALIASES
 command fortune
 
 ## Add .local/bin to $PATH
-export PATH=${PATH}:${HOME}/.local/bin:$(ruby -e 'print Gem.user_dir')/bin
+export PATH=${PATH}:${HOME}/.local/bin
+
+if [[ ! -v RTERM ]]; then
+    export RTERM=$TERM
+fi
