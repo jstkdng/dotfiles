@@ -175,5 +175,5 @@ do
 done
 shopt -u nullglob #revert nullglob
 
-hc pad 0 0 0 20 0
+hc pad 0 20 0 0 0
 python ~/.config/herbstluftwm/startup.py
