@@ -165,6 +165,8 @@ hc unlock
 # Personal keybindings
 hc keybind $Mod+d spawn rofi -show drun
 hc keybind $Mod+Scroll_Lock spawn betterlockscreen -l dim
+hc keybind XF86MonBrightnessUp spawn brillo -u 100000 -A 5
+hc keybind XF86MonBrightnessDown spawn brillo -u 100000 -U 5
 
 # Source per host configuration
 shopt -s nullglob 
