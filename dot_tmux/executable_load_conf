@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+function load_conf()
+{
+    confdir="${HOME}/.tmux/conf"
+    zsh "${confdir}/${1}"
+}
+
+if [[ -v "${SSH_CLIENT}" ]]; then
+    load_conf ssh
+fi
+
+if [[ "$RTERM" == "linux" ]]; then
+    load_conf tty
+fi

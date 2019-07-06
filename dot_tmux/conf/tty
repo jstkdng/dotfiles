@@ -1,0 +1,2 @@
+#!/bin/zsh
+tmux set -g @themepack 'basic'
