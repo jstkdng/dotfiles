@@ -22,7 +22,10 @@ def main():
         "/usr/bin/variety",
         "/usr/bin/fcitx",
         "/usr/bin/nextcloud",
-        "/usr/bin/polybar default"
+        "/usr/bin/polybar default",
+        "/usr/bin/udiskie -sN2F",
+        "/usr/bin/deluge-gtk",
+        "/usr/bin/thunderbird"
     ]
     for program in program_list:
         run(program)
