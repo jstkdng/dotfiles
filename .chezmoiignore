@@ -1,0 +1,8 @@
+{{- if eq .chezmoi.hostname "lyra" }}
+private_dot_config
+dot_local
+dot_tmux
+dot_tmux.conf
+dot_xinitrc
+dot_drirc
+{{- end }}
