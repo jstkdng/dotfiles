@@ -74,6 +74,3 @@ endif
 map <C-a> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/runtime/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
