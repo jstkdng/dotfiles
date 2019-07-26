@@ -25,7 +25,8 @@ def main():
         "/usr/bin/polybar default",
         "/usr/bin/udiskie -sN2F",
         "/usr/bin/deluge-gtk",
-        "/usr/bin/thunderbird"
+        "/usr/bin/thunderbird",
+        "/usr/bin/cbatticon"
     ]
     for program in program_list:
         run(program)

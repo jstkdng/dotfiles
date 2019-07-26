@@ -170,14 +170,5 @@ hc keybind $Mod+Scroll_Lock spawn betterlockscreen -l dim
 hc keybind XF86MonBrightnessUp spawn brillo -u 100000 -A 5
 hc keybind XF86MonBrightnessDown spawn brillo -u 100000 -U 5
 
-# Source per host configuration
-shopt -s nullglob 
-for conf in ~/.config/herbstluftwm/conf.d/*
-do
-    # I prefer zsh for this
-    zsh "$conf"
-done
-shopt -u nullglob #revert nullglob
-
 hc pad 0 20 0 0 0
 python ~/.config/herbstluftwm/startup.py
