@@ -25,7 +25,6 @@ fi
 # Once running X
 unset RTERM
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets)
 
 exec herbstluftwm

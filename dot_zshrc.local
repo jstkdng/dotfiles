@@ -65,6 +65,10 @@ command fortune
 ## Add .local/bin to $PATH
 export PATH=${PATH}:${HOME}/.local/bin
 
+## Update GPG
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 if [[ ! -v RTERM ]]; then
     export RTERM=$TERM
 fi
