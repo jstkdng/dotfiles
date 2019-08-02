@@ -18,7 +18,7 @@ function mnt-ms()
 
 function mnt-sec()
 {
-    encfs ~/Nextcloud/secure ~/Secure "${@}"
+    encfs ~/Nextcloud/Secure ~/Secure "${@}"
 }
 
 function xmr-wallet()
