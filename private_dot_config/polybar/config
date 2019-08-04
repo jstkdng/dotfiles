@@ -132,7 +132,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 label = " %time%%date%"
 
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
