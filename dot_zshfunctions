@@ -38,3 +38,8 @@ function screenshot()
 {
     maim -m 1 -s ~/Pictures/$(date +%s).png
 }
+
+function viewkey()
+{
+    cat ${1} | gpg --import-options show-only --import
+}
