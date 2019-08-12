@@ -12,7 +12,7 @@ def main():
         # Core stuff
         "/usr/bin/compton",
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
-        "/usr/bin/xss-lock -- betterlockscreen -l dim",
+        "/usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock",
         "/usr/lib/geoclue-2.0/demos/agent",
         "/usr/bin/redshift-gtk",
         # Applets
@@ -23,7 +23,7 @@ def main():
         "/usr/bin/fcitx",
         "/usr/bin/nextcloud",
         "/usr/bin/polybar default",
-        "/usr/bin/udiskie -sN2F",
+        "/usr/bin/udiskie",
         "/usr/bin/deluge-gtk",
         "/usr/bin/thunderbird",
         "/usr/bin/cbatticon"

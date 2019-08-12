@@ -48,8 +48,8 @@ hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-u       split   bottom  0.5
-hc keybind $Mod-o       split   right   0.5
+hc keybind $Mod-o       split   auto  0.5
+#hc keybind $Mod-o       split   right   0.5
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -92,7 +92,7 @@ hc keybind $Mod-p pseudotile toggle
 # I.e. if there are two windows within a frame, the grid layout is skipped.
 hc keybind $Mod-space                                                           \
             or , and . compare tags.focus.curframe_wcount = 2                   \
-                     . cycle_layout +1 max horizontal vertical max grid    \
+                     . cycle_layout +1 vertical horizontal max vertical grid    \
                , cycle_layout +1
 
 # mouse
@@ -122,8 +122,10 @@ hc set frame_transparent_width 5
 hc set frame_gap 5
 hc set frame_active_opacity 50
 
-hc attr theme.active.color '#0A94FF'
-hc attr theme.normal.color '#05427F'
+#hc attr theme.active.color '#0A94FF'
+#hc attr theme.normal.color '#05427F'
+hc attr theme.active.color '#222222'
+hc attr theme.normal.color '#111111'
 hc attr theme.urgent.color orange
 hc attr theme.inner_width 1
 hc attr theme.inner_color black
@@ -131,8 +133,10 @@ hc attr theme.border_width 3
 hc attr theme.floating.border_width 4
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color black
-hc attr theme.active.inner_color '#3E4A00'
-hc attr theme.active.outer_color '#3E4A00'
+#hc attr theme.active.inner_color '#3E4A00'
+#hc attr theme.active.outer_color '#3E4A00'
+hc attr theme.active.inner_color '#222222'
+hc attr theme.active.outer_color '#222222'
 hc attr theme.background_color '#141414'
 
 hc set window_gap 0
@@ -167,7 +171,7 @@ hc unlock
 
 # Personal keybindings
 hc keybind $Mod+d spawn rofi -show drun
-hc keybind $Mod+Scroll_Lock spawn betterlockscreen -l dim
+hc keybind $Mod+F12 spawn xsecurelock
 hc keybind XF86MonBrightnessUp spawn brillo -u 100000 -A 5
 hc keybind XF86MonBrightnessDown spawn brillo -u 100000 -U 5
 
