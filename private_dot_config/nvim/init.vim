@@ -23,8 +23,8 @@ set number
 syntax on
 set nowrap
 set scrolloff=10
-set colorcolumn=81
-highlight ColorColumn guibg=gray
+"set colorcolumn=81
+"highlight ColorColumn guibg=gray
 
 " Natural splitting
 set splitbelow
