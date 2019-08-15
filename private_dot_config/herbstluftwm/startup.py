@@ -16,7 +16,7 @@ def main():
         "/usr/lib/geoclue-2.0/demos/agent",
         "/usr/bin/redshift-gtk",
         # Applets
-        "/usr/bin/pa-applet",
+        "/usr/bin/pasystray",
         # General applications
         "/usr/bin/mpd",
         "/usr/bin/variety",
