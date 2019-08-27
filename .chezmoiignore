@@ -6,3 +6,7 @@
 .xinitrc
 .drirc
 {{- end }}
+
+{{- if ne .chezmoi.hostname "io" }}
+.Xmodmap
+{{- end }}
