@@ -1,4 +1,0 @@
-#!/bin/bash
-
-(sleep 5 && systemctl suspend)&
-betterlockscreen -l dim
