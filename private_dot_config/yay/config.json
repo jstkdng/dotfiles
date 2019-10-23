@@ -1,6 +1,6 @@
 {
 	"aururl": "https://aur.archlinux.org",
-	"buildDir": "$HOME/.cache/yay",
+	"buildDir": "/run/media/jk/ac195e15-edb4-4775-8484-248151c3f96d/",
 	"editor": "",
 	"editorflags": "",
 	"makepkgbin": "makepkg",

@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+function weechat()
+{
+    WEECHAT_PASSPHRASE=$(pass irc/weechat/enc) /usr/bin/weechat
+}
+
 function copy()
 {
     command xclip -sel c < ${1}
