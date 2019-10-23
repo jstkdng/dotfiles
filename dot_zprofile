@@ -1,9 +1,0 @@
-## Update GPG
-GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
-if [[ ! -v RTERM ]]; then
-    RTERM=$TERM
-fi
-
-command fortune

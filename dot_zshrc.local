@@ -42,6 +42,16 @@ ttyctl -f
 
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.zsh
+
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+if [[ ! -v RTERM ]]; then
+    export RTERM=$TERM
+fi
+
+command fortune
+
 # Source aliases
 source ~/.zshaliases
 source ~/.zshfunctions
