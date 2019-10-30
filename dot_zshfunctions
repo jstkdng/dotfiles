@@ -2,7 +2,7 @@
 
 function weechat()
 {
-    WEECHAT_PASSPHRASE=$(pass irc/weechat/enc) /usr/bin/weechat
+    WEECHAT_PASSPHRASE=$(pass irc/weechat/enc) /usr/bin/weechat $@
 }
 
 function copy()
