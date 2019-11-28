@@ -10,7 +10,7 @@ def main():
 
     program_list = [
         # Core stuff
-        "/usr/bin/compton",
+        "/usr/bin/picom",
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
         "/usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock",
         "/usr/lib/geoclue-2.0/demos/agent",
