@@ -158,6 +158,7 @@ hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule class='Gcr-prompter' pseudotile=on
 hc rule class='Pinentry-gtk-2' pseudotile=on
+hc rule class='Thunderbird' tag=' 5 '
 
 hc set tree_style '╾│ ├└╼─┐'
 
