@@ -26,6 +26,14 @@ function mnt-sec()
     encfs ~/Nextcloud/Secure ~/Secure "${@}"
 }
 
+function fastdel()
+{
+    uuid=".$(uuidgen)"
+    mkdir $uuid
+    rsync -a --delete $uuid/ $1/
+    rmdir $uuid $1
+}
+
 function xmr-wallet()
 {
     monero-wallet-cli \

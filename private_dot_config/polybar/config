@@ -53,8 +53,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = "Siji:pixselsize=10;2"
-font-2 = "Noto Sans CJK JP:pixelsize=10;2"
-font-1 = "Noto Sans:pixelsize=10;3"
+font-1 = "xos4 Terminus:pixelsize=14;3"
+font-2 = "unifont:pixelsize=12;4"
 
 modules-left = ewmh
 modules-center = 
