@@ -1,0 +1,17 @@
+# vi:ft=gotexttmpl
+vo=gpu
+gpu-api=opengl
+
+{{- if eq .chezmoi.hostname "io" }}
+hwdec=nvdec
+ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best"
+{{- else }}
+hwdec=vaapi
+ytdl-format="bestvideo[height<=?1080]+bestaudio/best"
+{{- end }}
+
+# Image Quality
+profile=gpu-hq
+video-sync=display-resample
+interpolation=yes
+
