@@ -14,7 +14,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
     call dein#add('cespare/vim-toml')
-    call dein#add('fatih/vim-go')
 
     call dein#end()
     call dein#save_state()

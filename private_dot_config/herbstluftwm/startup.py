@@ -26,7 +26,8 @@ def main():
         "/usr/bin/udiskie",
         "/usr/bin/deluge-gtk",
         "/usr/bin/thunderbird",
-        "/usr/bin/cbatticon"
+        "/usr/bin/cbatticon",
+        "/usr/bin/blueman-tray"
     ]
     for program in program_list:
         run(program)
