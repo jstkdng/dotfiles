@@ -1,6 +1,6 @@
 [user]
-    name = jk
-    email = jk@vin.ovh
-    signingkey = {{ .git.signkey }}!
+    name = {{ .git.name }}
+    email = {{ .git.email }}
+    signingkey = {{ .gpgkey }}!
 [commit]
     gpgsign = true
