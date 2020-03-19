@@ -3,7 +3,7 @@ import shlex
 import os
 from pathlib import Path
 
-log_file = Path.joinpath(Path.home(), Path(".local/share/xorg/Xorg.0.log.old"))
+log_file = Path.joinpath(Path.home(), Path(".local/share/xorg/Xorg.%s.log.old" % os.environ["DISPLAY"][-1]))
 
 def main():
     if not log_file.exists():
