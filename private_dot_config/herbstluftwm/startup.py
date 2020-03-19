@@ -1,5 +1,6 @@
 import subprocess
 import shlex
+import os
 from pathlib import Path
 
 log_file = Path.joinpath(Path.home(), Path(".local/share/xorg/Xorg.0.log.old"))
