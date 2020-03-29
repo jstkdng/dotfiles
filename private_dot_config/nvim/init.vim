@@ -77,3 +77,7 @@ endif
 map <C-a> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Chezmoi templates
+autocmd BufNewFile,BufRead *.json.tmpl set filetype=json
+autocmd BufNewFile,BufRead *.ini.tmpl set filetype=dosini
+
