@@ -10,3 +10,8 @@
 {{- if ne .chezmoi.hostname "io" }}
 .Xmodmap
 {{- end }}
+
+{{- if ne .chezmoi.username "jk" }}
+.config/pacman
+{{- end }}
+
