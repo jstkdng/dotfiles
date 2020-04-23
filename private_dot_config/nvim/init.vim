@@ -17,6 +17,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('mtdl9/vim-log-highlighting')
     call dein#add('fatih/vim-go')
     call dein#add('ngg/vim-gn')
+    " Haskell
+    call dein#add('neovimhaskell/haskell-vim')
 
     call dein#end()
     call dein#save_state()
@@ -27,8 +29,8 @@ set number
 syntax on
 set nowrap
 set scrolloff=10
-"set colorcolumn=81
-"highlight ColorColumn guibg=gray
+set colorcolumn=81
+highlight ColorColumn guibg=gray
 
 " Natural splitting
 set splitbelow
