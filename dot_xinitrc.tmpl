@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# vi:ft=bash
 # Handy variables
 export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_IM_MODULE=fcitx
@@ -27,4 +27,4 @@ unset RTERM
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets)
 
-exec herbstluftwm
+exec awesome

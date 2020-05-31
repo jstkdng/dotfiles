@@ -1,6 +1,9 @@
+# vi:ft=gitconfig
 [user]
     name = {{ .git.name }}
     email = {{ .git.email }}
     signingkey = {{ .gpgkey }}!
 [commit]
     gpgsign = true
+[diff]
+    tool = vimdiff
