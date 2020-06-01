@@ -243,7 +243,39 @@ globalkeys = gears.table.join(
 
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.spawn.with_shell("rofi -show drun") end,
-              {description = "run prompt", group = "launcher"})
+              {description = "run prompt", group = "launcher"}),
+    -- User
+    awful.key(
+        { modkey }, "F12",
+        function () awful.spawn("xsecurelock", false) end,
+        { description = "Lock Screen", group = "user"}
+    ),
+    awful.key(
+        { }, "XF86MonBrightnessUp",
+        function () awful.spawn("brillo -u 100000 -A 5", false) end,
+        { description = "increase brightness", group = "user" }
+    ),
+    awful.key(
+        { }, "XF86MonBrightnessDown",
+        function () awful.spawn("brillo -u 100000 -U 5", false) end,
+        { description = "reduce brightness", group = "user" }
+    ),
+    awful.key(
+        { }, "XF86AudioRaiseVolume",
+        function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false) end,
+        { description = "reduce volume", group = "user" }
+    ),
+    awful.key(
+        { }, "XF86AudioLowerVolume",
+        function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%", false) end,
+        { description = "increase volume", group = "user" }
+    ),
+    awful.key(
+        { }, "XF86AudioMute",
+        function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false) end,
+        { description = "mute volume", group = "user"}
+    ),
+    awful.key()
 )
 
 clientkeys = gears.table.join(
