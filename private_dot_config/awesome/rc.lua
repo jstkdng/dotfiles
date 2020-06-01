@@ -262,13 +262,13 @@ globalkeys = gears.table.join(
     ),
     awful.key(
         { }, "XF86AudioRaiseVolume",
-        function () awful.spawn("pamixer -d 5", false) end,
-        { description = "reduce volume", group = "user" }
+        function () awful.spawn("pamixer -i 5", false) end,
+        { description = "increase volume", group = "user" }
     ),
     awful.key(
         { }, "XF86AudioLowerVolume",
-        function () awful.spawn("pamixer -i 5", false) end,
-        { description = "increase volume", group = "user" }
+        function () awful.spawn("pamixer -d 5", false) end,
+        { description = "reduce volume", group = "user" }
     ),
     awful.key(
         { }, "XF86AudioMute",
