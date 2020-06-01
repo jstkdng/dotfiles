@@ -37,12 +37,10 @@ set splitbelow
 set splitright
 
 " Tab and indentation settings
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
 set expandtab
-set smarttab
-set smartindent
 
 " Better interaction with the system
 set mouse=a
