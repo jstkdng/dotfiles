@@ -262,17 +262,17 @@ globalkeys = gears.table.join(
     ),
     awful.key(
         { }, "XF86AudioRaiseVolume",
-        function () awful.spawn("pamixer -i 5", false) end,
+        function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%", false) end,
         { description = "increase volume", group = "user" }
     ),
     awful.key(
         { }, "XF86AudioLowerVolume",
-        function () awful.spawn("pamixer -d 5", false) end,
+        function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%", false) end,
         { description = "reduce volume", group = "user" }
     ),
     awful.key(
         { }, "XF86AudioMute",
-        function () awful.spawn("pamixer -t", false) end,
+        function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false) end,
         { description = "mute volume", group = "user"}
     ),
     awful.key()
