@@ -4,6 +4,8 @@ endif
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
 
