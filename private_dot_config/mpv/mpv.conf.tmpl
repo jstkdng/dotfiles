@@ -2,11 +2,10 @@
 vo=gpu
 gpu-api=opengl
 
-{{- if eq .chezmoi.hostname "io" }}
-hwdec=nvdec
-ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best"
-{{- else }}
 hwdec=vaapi
+{{- if eq .chezmoi.hostname "vesta" }}
+ytdl-format="bestvideo[height<=?1080][ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm]"
+{{- else }}
 ytdl-format="bestvideo[height<=?1080]+bestaudio/best"
 {{- end }}
 
