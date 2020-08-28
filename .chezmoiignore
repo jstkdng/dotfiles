@@ -1,5 +1,5 @@
+# vi:ft=gotexttmpl
 {{- if eq .chezmoi.hostname "lyra" }}
-.config
 .local
 .tmux
 .tmux.conf
