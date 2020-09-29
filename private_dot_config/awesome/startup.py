@@ -13,7 +13,7 @@ def main():
         # Core stuff
         "/usr/bin/picom",
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
-        "/usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock",
+        "/usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l /usr/bin/xsecurelock",
         "/usr/lib/geoclue-2.0/demos/agent",
         "/usr/bin/redshift-gtk",
         # Applets
@@ -30,6 +30,8 @@ def main():
         "/usr/bin/cbatticon",
         "/usr/bin/blueman-tray"
     ]
+
+
     for program in program_list:
         run(program)
 
@@ -37,8 +39,11 @@ def main():
     log_file.unlink()
 
 def run(program):
+    logname = program.split("/")[3].split(" ")[0]
+    log = open(Path.joinpath(Path.home(), Path(".local/share/xorg/%s.log" % logname)), "w")
+
     try:
-        subprocess.Popen(shlex.split(program))
+        subprocess.Popen(shlex.split(program), stdout=log, stderr=log, shell=True)
     except FileNotFoundError:
         pass
 

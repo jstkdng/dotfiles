@@ -1,31 +1,62 @@
 if &compatible
   set nocompatible
 endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-if dein#load_state('~/.cache/dein')
-    call dein#begin('~/.cache/dein')
+call plug#begin(stdpath('data') . '/plugged')
 
-    call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-    call dein#add('nanotech/jellybeans.vim')
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('Xuyuanp/nerdtree-git-plugin')
-    call dein#add('vim-airline/vim-airline')
-    call dein#add('vim-airline/vim-airline-themes')
-    call dein#add('cespare/vim-toml')
-    call dein#add('mtdl9/vim-log-highlighting')
-    call dein#add('fatih/vim-go')
-    call dein#add('ngg/vim-gn')
-    " Haskell
-    call dein#add('neovimhaskell/haskell-vim')
+Plug 'nanotech/jellybeans.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'cespare/vim-toml'
+Plug 'mtdl9/vim-log-highlighting'
+Plug 'fatih/vim-go'
+Plug 'ngg/vim-gn'
+Plug 'chr4/nginx.vim'
+Plug 'pboettch/vim-cmake-syntax'
+Plug 'alx741/vinfo'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'jstkdng/vim-avr-syntax'
 
-    call dein#end()
-    call dein#save_state()
-endif
+call plug#end()
 
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+let g:go_gopls_enabled = 1
 " Better editing
 set number
 syntax on
