@@ -62,7 +62,7 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.spiral,
+    awful.layout.suit.tile,
     awful.layout.suit.floating,
 }
 -- }}}
@@ -461,6 +461,13 @@ awful.rules.rules = {
     {
         rule_any = {
             class = { "Thunderbird" }
+        }, properties = {
+            tag = " 9 "
+        }
+    },
+    {
+        rule_any = {
+            class = { "xfreerdp" }
         }, properties = {
             tag = " 9 "
         }
