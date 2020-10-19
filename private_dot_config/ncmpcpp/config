@@ -49,7 +49,7 @@ mpd_music_dir = ~/Music
 ## }
 ##
 #
-visualizer_fifo_path = ~/.config/mpd/mpd.fifo"
+visualizer_fifo_path = ~/.config/mpd/mpd.fifo
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
