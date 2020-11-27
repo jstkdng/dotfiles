@@ -1,9 +1,20 @@
 # vi:ft=gitconfig
 [user]
-    name = {{ .git.name }}
-    email = {{ .git.email }}
-    signingkey = {{ .gpgkey }}!
+	name = {{ .git.name }}
+	email = {{ .git.email }}
+	signingkey = {{ .gpgkey }}!
 [commit]
-    gpgsign = true
+	gpgsign = true
 [diff]
-    tool = vimdiff
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = true
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE -c '$wincmd w' -c 'wincmd L'
+[difftool]
+	prompt = false
+[diff]
+	tool = vimdiff
+
