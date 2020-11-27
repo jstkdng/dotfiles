@@ -1,4 +1,12 @@
 #!/bin/zsh
+# vi:ft=bash
+
+function crlftolf()
+{
+	for i in $@; do
+		dos2unix -n $i $i
+	done
+}
 
 function weechat()
 {

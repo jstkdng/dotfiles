@@ -469,7 +469,7 @@ awful.rules.rules = {
         rule_any = {
             class = { "xfreerdp" }
         }, properties = {
-            tag = " 9 "
+            tag = " 5 "
         }
     },
     -- Set Firefox to always map on the tag named "2" on screen 1.

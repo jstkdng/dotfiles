@@ -22,6 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'jstkdng/vim-avr-syntax'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'leissa/vim-acme'
 
 call plug#end()
 

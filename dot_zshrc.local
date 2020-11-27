@@ -55,3 +55,4 @@ command fortune
 # Source aliases
 source ~/.zshaliases
 source ~/.zshfunctions
+eval "$(rbenv init -)"
