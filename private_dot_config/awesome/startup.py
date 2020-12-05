@@ -3,9 +3,9 @@ import shlex
 import os
 from pathlib import Path
 
-log_file = Path.joinpath(Path.home(), Path(".local/share/xorg/Xorg.%s.log.old" % os.environ["DISPLAY"][-1]))
-
 def main():
+    log_file = Path.joinpath(Path.home(), Path(".local/share/xorg/Xorg.%s.log.old" % os.environ["DISPLAY"][-1]))
+    
     if not log_file.exists():
         return
 
@@ -13,7 +13,7 @@ def main():
         # Core stuff
         "/usr/bin/picom",
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
-        "/usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l /usr/bin/xsecurelock",
+        str(Path.joinpath(Path.home(), Path(".config/awesome/lock"))),
         "/usr/lib/geoclue-2.0/demos/agent",
         "/usr/bin/redshift-gtk",
         # Applets

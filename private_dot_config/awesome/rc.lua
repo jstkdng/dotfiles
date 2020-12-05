@@ -239,7 +239,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.spawn.with_shell("rofi -show drun") end,
+    awful.key({ modkey },            "r",     function () awful.spawn("rofi -show drun", false) end,
               {description = "run prompt", group = "launcher"}),
     -- User
     awful.key(
@@ -469,7 +469,7 @@ awful.rules.rules = {
         rule_any = {
             class = { "xfreerdp" }
         }, properties = {
-            tag = " 5 "
+            tag = " 9 "
         }
     },
     -- Set Firefox to always map on the tag named "2" on screen 1.

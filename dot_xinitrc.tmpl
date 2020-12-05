@@ -27,4 +27,4 @@ unset RTERM
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets)
 
-exec awesome
+exec awesome &>> ~/.local/share/xorg/awesome.log
