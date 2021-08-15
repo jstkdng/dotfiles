@@ -23,12 +23,9 @@ def main():
         "/usr/bin/variety",
         "/usr/bin/fcitx",
         "/usr/bin/nextcloud",
-        # "/usr/bin/polybar default",
         "/usr/bin/udiskie",
-        "/usr/bin/deluge-gtk",
         "/usr/bin/thunderbird",
-        "/usr/bin/cbatticon",
-        "/usr/bin/blueman-tray"
+        "/usr/bin/caffeine"
     ]
 
 

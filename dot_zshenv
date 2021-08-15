@@ -9,11 +9,5 @@ SUDO_EDITOR=$EDITOR
 SYSTEMD_COLORS=1
 SYSTEMD_URLIFY=0
 
-PAGER="/usr/bin/less"
-MANPAGER=$PAGER
-SYSTEMD_PAGER=$PAGER
-GIT_PAGER=$PAGER
-
 PATH=$HOME/.local/bin:$PATH
-PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 export GOPATH=$HOME/Code/go

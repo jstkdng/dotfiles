@@ -272,7 +272,16 @@ globalkeys = gears.table.join(
         function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false) end,
         { description = "mute volume", group = "user"}
     ),
-    awful.key()
+    awful.key(
+		{ modkey }, "b",
+		function ()
+			for s in screen do
+				s.mywibox.visible = not s.mywibox.visible
+				--if s.mywibox
+			end
+		end,
+		{ description = "toggle wibox", group = "user" }
+	)
 )
 
 clientkeys = gears.table.join(
@@ -426,6 +435,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+		  "win0", 		   -- jetbrain's IDEs
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -470,6 +480,15 @@ awful.rules.rules = {
             class = { "xfreerdp" }
         }, properties = {
             tag = " 9 "
+        }
+    },
+    {
+        rule_any = {
+            class = { "parsecd" }
+        }, properties = {
+			maximized_vertical = true,
+			maximized_horizontal = true,
+			border_width = 0
         }
     },
     -- Set Firefox to always map on the tag named "2" on screen 1.
