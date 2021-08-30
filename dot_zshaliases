@@ -2,4 +2,4 @@
 alias history="history 0"
 alias delet="shred -u -v"
 alias free="free --si"
-alias nvidia-offload="__NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only"
+alias flog="journalctl -o cat -f -u"
