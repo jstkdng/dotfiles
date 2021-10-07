@@ -484,7 +484,7 @@ awful.rules.rules = {
     },
     {
         rule_any = {
-            class = { "parsecd" }
+            class = { "parsecd", "looking-glass-client" }
         }, properties = {
 			maximized_vertical = true,
 			maximized_horizontal = true,

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+declare -A rigs=(
+	["r5"]="192.168.18.51"
+	["6"]="192.168.18.68"
+	["vm"]="192.168.18.89"
+)
+
+declare -A users=(
+	["r5"]="MINER"
+	["6"]="DELL"
+	["vm"]="VM"
+)
+
+declare -A pass=(
+	["r5"]=$(pass rdp/rigs)
+	["6"]=$(pass rdp/dell)
+	["vm"]=1234
+)
+
+xfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /bpp:32 /sound /drive:RDP,$HOME/RDP /cert:ignore /network:auto /video /rfx /rfx-mode:video /gfx:AVC420 +gfx-progressive /dynamic-resolution /w:1904 /h:1164 /v:"${rigs["$1"]}":3389 /wm-class:xfreerdp /gdi:hw +menu-anims +gfx-progressive +aero
