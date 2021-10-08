@@ -16,7 +16,7 @@ def main():
         # General applications
         "/usr/bin/mpd",
         "/usr/bin/variety",
-        "/usr/bin/fcitx",
+        "/usr/bin/fcitx5",
         "/usr/bin/nextcloud",
         "/usr/bin/udiskie",
         "/usr/bin/thunderbird",
