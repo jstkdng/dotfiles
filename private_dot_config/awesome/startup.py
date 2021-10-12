@@ -12,7 +12,7 @@ def main():
         "/usr/lib/geoclue-2.0/demos/agent",
         "/usr/bin/redshift-gtk",
         # Applets
-        "/usr/bin/pasystray -N all",
+        "/usr/bin/pasystray -N none",
         # General applications
         "/usr/bin/mpd",
         "/usr/bin/variety",
