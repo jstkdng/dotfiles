@@ -4,6 +4,11 @@ import os
 from pathlib import Path
 
 def main():
+    log_file = Path.joinpath(Path.home(), Path(".local/share/xorg/Xorg.%s.log.old" % os.environ["DISPLAY"][-1]))
+    
+    if not log_file.exists():
+        return
+
     program_list = [
         # Core stuff
         "/usr/bin/picom",
@@ -23,6 +28,8 @@ def main():
         "/usr/bin/caffeine"
     ]
 
+    # Xorg.log.old file
+    log_file.unlink()
 
     for program in program_list:
         run(program)
