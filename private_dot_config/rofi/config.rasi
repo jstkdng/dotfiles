@@ -1,5 +1,6 @@
+@theme "oxide"
+
 configuration {
 	modi: "drun";
 	show-icons: true;
-	theme: "oxide";
 }
