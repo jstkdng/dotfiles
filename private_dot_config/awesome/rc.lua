@@ -491,6 +491,31 @@ awful.rules.rules = {
 			border_width = 0
         }
     },
+	{
+                rule_any = {
+                        name = { "Nextcloud" }
+                }, properties = {
+                        titlebars_enabled = false,
+                        border_width = 0
+                }
+        },
+        {
+                rule_any = {
+                        name = { "Nextcloud Settings" }
+                }, properties = {
+                        titlebars_enabled = true,
+                        border_width = 2
+                }
+        },
+        {
+                rule_any = {
+                        class = { "MEGAsync" }
+                }, properties = {
+                        titlebars_enabled = false,
+                        border_width = 0,
+                        floating = true
+                }
+        },
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
