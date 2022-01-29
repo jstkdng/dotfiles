@@ -17,7 +17,6 @@ def main():
         "/usr/lib/geoclue-2.0/demos/agent",
         "/usr/bin/redshift-gtk",
         # Applets
-        #"/usr/bin/pasystray -N none",
         "/usr/bin/volctl",
         # General applications
         "/usr/bin/mpd",
@@ -26,7 +25,8 @@ def main():
         "/usr/bin/nextcloud",
         "/usr/bin/udiskie",
         "/usr/bin/thunderbird",
-        "/usr/bin/caffeine"
+        "/usr/bin/caffeine",
+        "/usr/bin/cbatticon"
     ]
 
     # Xorg.log.old file
