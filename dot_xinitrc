@@ -1,5 +1,6 @@
 #!/bin/sh
 # vi:ft=bash
+
 # Handy variables
 export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_IM_MODULE=fcitx
