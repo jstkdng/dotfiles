@@ -32,6 +32,7 @@
     alternate-active-foreground: @active-foreground;
     active-background:           @blue;
     selected-active-background:  rgba ( 39, 141, 182, 100 % );
+	font: "Terminus (TTF) 12";
 }
 window {
     background-color: @background;
