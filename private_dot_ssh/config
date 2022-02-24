@@ -9,4 +9,14 @@ Host *
     ControlPersist yes
     ControlPath ~/.ssh/socket-%r@%h:%p
 
-Include ~/.ssh/hostconfig
+Host aur aur.archlinux.org
+	User aur
+	Hostname aur.archlinux.org
+
+Host vps
+	User arch
+	Hostname vin.ovh
+
+Host rpi
+	User ubuntu
+	Hostname europa
