@@ -8,11 +8,6 @@ function crlftolf()
 	done
 }
 
-function weechat()
-{
-    WEECHAT_PASSPHRASE=$(pass irc/weechat/enc) /usr/bin/weechat $@
-}
-
 function copy()
 {
     command xclip -sel c < ${1}
@@ -21,7 +16,7 @@ function copy()
 
 function downmp3()
 {
-    youtube-dl -x --audio-format=mp3 -o ${PWD}/%(title)s.%(ext)s $@
+	yt-dlp -x --audio-format=mp3 -o ${PWD}/%(title)s.%(ext)s $@
 }
 
 function mnt-ms()

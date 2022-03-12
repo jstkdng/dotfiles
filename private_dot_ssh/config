@@ -17,6 +17,10 @@ Host vps
 	User arch
 	Hostname vin.ovh
 
-Host rpi
+Host europa
 	User ubuntu
 	Hostname europa
+
+Host iris
+	User jk
+	Hostname iris
