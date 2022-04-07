@@ -18,7 +18,7 @@ Host vps
 	Hostname vin.ovh
 
 Host europa
-	User ubuntu
+	User alarm
 	Hostname europa
 
 Host iris
