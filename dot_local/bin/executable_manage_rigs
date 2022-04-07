@@ -1,7 +1,7 @@
 #!/bin/bash
 
 declare -A rigs=(
-	["hp"]="192.168.18.111"
+	["hp"]="192.168.18.69"
 )
 
 declare -A users=(
@@ -12,4 +12,10 @@ declare -A pass=(
 	["hp"]=$(pass mail/finances)
 )
 
-xfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /bpp:32 /sound /drive:RDP,$HOME/RDP /cert:ignore /network:auto /video /rfx /rfx-mode:video /gfx:AVC420 +gfx-progressive /dynamic-resolution /w:1904 /h:1164 /v:"${rigs["$1"]}":3389 /wm-class:xfreerdp /gdi:hw +menu-anims +gfx-progressive +aero
+xfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /v:"${rigs["$1"]}":3389 \
+	/w:1904 /h:1164 /dynamic-resolution \
+	/network:lan /cert:ignore \
+	/sound:sys:pulse /mic:sys:pulse \
+	/drive:RDP,$HOME/RDP \
+	/gfx:AVC444 /bpp:32 /video \
+	/wm-class:xfreerdp /gdi:hw +clipboard +gfx-progressive
