@@ -27,7 +27,8 @@ def main():
         "/usr/bin/thunderbird",
         "/usr/bin/caffeine",
         "/usr/bin/cbatticon",
-        "/usr/bin/keepassxc"
+        "/usr/bin/keepassxc",
+        "/usr/bin/shutter"
     ]
 
     # Xorg.log.old file
