@@ -244,7 +244,7 @@ globalkeys = gears.table.join(
     -- User
     awful.key(
         { modkey }, "F12",
-        function () awful.spawn("xsecurelock", false) end,
+        function () awful.spawn.with_shell("xsecurelock", false) end,
         { description = "Lock Screen", group = "user"}
     ),
     awful.key(
