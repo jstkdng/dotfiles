@@ -1,0 +1,25 @@
+#!/bin/bash
+# vi:ft=bash
+
+# Handy variables
+export QT_QPA_PLATFORMTHEME=gnome
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export SDL_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+export MOZ_ENABLE_WAYLAND=1
+
+# Java variables
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# XDG Variables
+export XDG_CONFIG_DIR="${HOME}/.config"
+
+# Once running X
+unset RTERM
+
+eval $(gnome-keyring-daemon --start --components=secrets)
+
+sway -V &> sway.log

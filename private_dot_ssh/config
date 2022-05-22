@@ -15,6 +15,10 @@ Host aur aur.archlinux.org
 
 Host vps
 	User arch
+	Hostname 5.161.17.19
+
+Host lyra
+	User arch
 	Hostname vin.ovh
 
 Host europa

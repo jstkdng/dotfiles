@@ -18,8 +18,8 @@ Plug 'ngg/vim-gn'
 Plug 'chr4/nginx.vim'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'alx741/vinfo'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'jstkdng/vim-avr-syntax'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'leissa/vim-acme'
@@ -80,6 +80,7 @@ set guicursor=
 
 " Terminal config
 tnoremap <C-f> <C-\><C-n>
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " Restore cursor position
 augroup resCur
@@ -113,3 +114,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd BufNewFile,BufRead *.json.tmpl set filetype=json
 autocmd BufNewFile,BufRead *.ini.tmpl set filetype=dosini
 
+" Coc
+let g:coc_global_extensions = ['coc-json', 'coc-clangd']
