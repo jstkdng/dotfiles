@@ -23,4 +23,3 @@ unset RTERM
 eval $(gnome-keyring-daemon --start --components=secrets)
 
 sway -V &> ~/.local/share/sway/sway.log
-cp ~/.local/share/sway/{sway.log,sway.log.old}

@@ -1,6 +1,7 @@
 import subprocess
 import shlex
 import os
+import time
 from pathlib import Path
 
 def main():
@@ -8,20 +9,13 @@ def main():
         # Core stuff
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
         "/usr/lib/geoclue-2.0/demos/agent",
-        #"/usr/bin/redshift-gtk",
-        # Applets
-        #"/usr/bin/volctl",
-        # General applications
-        #"/usr/bin/mpd",
-        #"/usr/bin/variety",
+        "/usr/bin/variety",
         "/usr/bin/fcitx5",
-        "/usr/bin/nextcloud",
         "/usr/bin/udiskie",
         "/usr/bin/thunderbird",
-        #"/usr/bin/caffeine",
-        #"/usr/bin/cbatticon",
         "/usr/bin/keepassxc",
-        "/usr/bin/nheko"
+        "/usr/bin/nheko",
+        "/usr/bin/nextcloud",
     ]
 
     for program in program_list:
@@ -32,6 +26,8 @@ def run(program : str):
     log = open(Path.joinpath(Path.home(), Path(".local/share/sway/%s.log" % logname)), "w")
 
     try:
+        if "nextcloud" in program:
+            time.sleep(1.5)
         subprocess.Popen(shlex.split(program), stdout=log, stderr=log, shell=True)
     except FileNotFoundError:
         pass

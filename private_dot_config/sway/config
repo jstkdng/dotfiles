@@ -237,25 +237,27 @@ exec_always {
 default_border pixel 2
 
 gaps inner 4
-#smart_gaps on
 
 focus_follows_mouse no
-
-set $wallpapers_path $HOME/Nextcloud/Shared/Pictures/wallpapers/desktop
-output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 exec wl-paste -t text --watch clipman store --no-persist
 exec python ~/.config/sway/startup.py
 
+font pango:Terminus 8
+for_window [title="."] title_format "<b>%title</b> (%app_id)"
+client.focused          #333333 #111111 #ffffff #999999   #333333
+
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
+for_window [app_id="mpv"] floating enable
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable
+for_window [app_id="keepassxc"] floating enable
 
 # looking glass config
 for_window [app_id="looking-glass-client"] border none
 workspace 4 gaps inner 0
 
-
+# workspace assignment
 assign [app_id="chromium"] 1
 assign [app_id="Alacritty"] 2
 assign [app_id="nheko"] 3

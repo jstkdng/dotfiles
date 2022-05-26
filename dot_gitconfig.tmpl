@@ -1,22 +1,22 @@
 # vi:ft=gitconfig
 [user]
-	name = {{ .git.name }}
-	email = {{ .git.email }}
-	signingkey = {{ .gpgkey }}!
+    name = JustKidding
+    email = jk@vin.ovh
+    signingkey = 69C39A7A54B828CBEE37DC57EF06BB7EBE3CA982!
 [commit]
-	gpgsign = true
+    gpgsign = true
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [mergetool]
-	prompt = true
+    prompt = true
 [mergetool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE -c '$wincmd w' -c 'wincmd L'
+    cmd = nvim -d $LOCAL $REMOTE -c '$wincmd w' -c 'wincmd L'
 [difftool]
-	prompt = false
+    prompt = false
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [core]
-	autocrlf = input
+    autocrlf = input
 
