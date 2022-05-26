@@ -13,7 +13,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'cespare/vim-toml'
 Plug 'mtdl9/vim-log-highlighting'
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 Plug 'ngg/vim-gn'
 Plug 'chr4/nginx.vim'
 Plug 'pboettch/vim-cmake-syntax'
@@ -23,6 +23,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 Plug 'jstkdng/vim-avr-syntax'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'leissa/vim-acme'
+Plug 'nfnty/vim-nftables'
 
 call plug#end()
 
@@ -56,6 +57,8 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 let g:go_gopls_enabled = 1
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 " Better editing
 set number
 syntax on
@@ -72,6 +75,7 @@ set splitright
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " Better interaction with the system
 set mouse=a
@@ -115,4 +119,4 @@ autocmd BufNewFile,BufRead *.json.tmpl set filetype=json
 autocmd BufNewFile,BufRead *.ini.tmpl set filetype=dosini
 
 " Coc
-let g:coc_global_extensions = ['coc-json', 'coc-clangd']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-jedi']
