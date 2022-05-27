@@ -10,7 +10,7 @@ function crlftolf()
 
 function copy()
 {
-    command xclip -sel c < ${1}
+    command wl-copy < ${1}
     echo "Copied file ${1} to clipboard!"
 }
 

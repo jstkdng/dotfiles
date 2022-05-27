@@ -16,7 +16,11 @@ def main():
         "/usr/bin/keepassxc",
         "/usr/bin/nheko",
         "/usr/bin/nextcloud",
+        "~/.local/bin/idle_lock"
     ]
+
+    # wait for waybar to start
+    time.sleep(1.5)
 
     for program in program_list:
         run(program)
@@ -26,8 +30,6 @@ def run(program : str):
     log = open(Path.joinpath(Path.home(), Path(".local/share/sway/%s.log" % logname)), "w")
 
     try:
-        if "nextcloud" in program:
-            time.sleep(1.5)
         subprocess.Popen(shlex.split(program), stdout=log, stderr=log, shell=True)
     except FileNotFoundError:
         pass

@@ -1,3 +1,6 @@
 #!/bin/bash
 
-swaylock
+LOCK_IMAGE=/tmp/lock.png
+grim -l 0 - | convert - -blur 0x6 $LOCK_IMAGE
+swaylock -e -i $LOCK_IMAGE
+rm $LOCK_IMAGE
