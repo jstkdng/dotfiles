@@ -234,6 +234,8 @@ exec_always {
 	gsettings set $gnome-schema color-scheme prefer-dark
 }
 
+output * adaptive_sync on
+
 default_border pixel 2
 
 gaps inner 4
@@ -245,7 +247,7 @@ exec python ~/.config/sway/startup.py
 
 font pango:Terminus 8
 for_window [title="."] title_format "<b>%title</b> (%app_id)"
-client.focused          #333333 #111111 #ffffff #999999   #333333
+client.focused          #333333 #111111 #ffffff #999999   #555555
 
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
 for_window [app_id="mpv"] floating enable
@@ -255,15 +257,16 @@ for_window [app_id="keepassxc"] floating enable
 
 # looking glass config
 for_window [app_id="looking-glass-client"] border none
-workspace 4 gaps inner 0
+workspace 1 gaps inner 0
+workspace 3 gaps inner 0
 
 # workspace assignment
 assign [app_id="chromium"] 1
 assign [app_id="Alacritty"] 2
-assign [app_id="nheko"] 3
-assign [app_id="looking-glass-client"] 4
-assign [title="FreeRDP"] 9
-assign [app_id="thunderbird"] 10
+assign [app_id="looking-glass-client"] 3
+assign [app_id="nheko"] 9
+assign [app_id="thunderbird"] 9
+assign [title="FreeRDP"] 10
 
 include /etc/sway/config.d/*
 
