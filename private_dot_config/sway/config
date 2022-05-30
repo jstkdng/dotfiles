@@ -138,7 +138,7 @@ input * xkb_numlock enable
     # We just use 1-10 as the default.
 	bindsym $mod+period workspace next
 	bindsym $mod+comma workspace prev
-	bindsym $mod+Shift+s exec bash -c 'grim -l 0 -g "$(slurp)" - | wl-copy'
+	bindsym $mod+Shift+s exec grim -l 0 -g "$(slurp)" - | wl-copy
 #
 # Layout stuff:
 #
@@ -208,7 +208,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-	swaybar_command "waybar"
+	swaybar_command "/usr/bin/waybar"
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
@@ -237,17 +237,24 @@ exec_always {
 output * adaptive_sync on
 
 default_border pixel 2
+titlebar_border_thickness 2
 
 gaps inner 4
 
 focus_follows_mouse no
 
-exec wl-paste -t text --watch clipman store --no-persist
+exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
+exec /usr/bin/swayidle -w \
+        timeout 300 '~/.local/bin/lock_sway' \
+        timeout 600 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"' \
+        before-sleep '~/.local/bin/lock_sway'
+
 exec python ~/.config/sway/startup.py
 
 font pango:Terminus 8
 for_window [title="."] title_format "<b>%title</b> (%app_id)"
-client.focused          #333333 #111111 #ffffff #999999   #555555
+client.focused          #555555 #111111 #ffffff #999999   #555555
 
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
 for_window [app_id="mpv"] floating enable

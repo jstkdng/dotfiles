@@ -1,6 +1,17 @@
 #!/bin/bash
 
+FILE=/tmp/already_locked
 LOCK_IMAGE=/tmp/lock.png
+
+# don't lock twice
+if [ -f "$FILE" ]; then
+    exit 0
+fi
+touch $FILE
+
+# lock screen
 grim -l 0 - | convert - -blur 0x6 $LOCK_IMAGE
 swaylock -e -i $LOCK_IMAGE
-rm $LOCK_IMAGE
+
+# delete files used by locker
+rm $LOCK_IMAGE $FILE

@@ -16,7 +16,6 @@ def main():
         "/usr/bin/keepassxc",
         "/usr/bin/nheko",
         "/usr/bin/nextcloud",
-        "~/.local/bin/idle_lock"
     ]
 
     # wait for waybar to start
