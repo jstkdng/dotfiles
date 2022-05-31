@@ -138,7 +138,7 @@ input * xkb_numlock enable
     # We just use 1-10 as the default.
 	bindsym $mod+period workspace next
 	bindsym $mod+comma workspace prev
-	bindsym $mod+Shift+s exec grim -l 0 -g "$(slurp)" - | wl-copy
+
 #
 # Layout stuff:
 #
@@ -176,8 +176,6 @@ input * xkb_numlock enable
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-
-	bindsym $mod+F12 exec ~/.local/bin/lock_sway
 #
 # Resizing containers:
 #
@@ -202,6 +200,18 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+#
+# Custom keybinds
+#
+
+	bindsym $mod+Shift+s exec 'grim -l 0 -g "$(slurp)" - | wl-copy'
+    bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
+    bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
+    bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+    bindsym XF86MonBrightnessUp exec 'brillo -u 100000 -A 5'
+    bindsym XF86MonBrightnessDown exec 'brillo -u 100000 -U 5'
+	bindsym $mod+F12 exec '~/.local/bin/lock_sway'
 
 #
 # Status Bar:
@@ -246,7 +256,7 @@ focus_follows_mouse no
 exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
 exec /usr/bin/swayidle -w \
         timeout 300 '~/.local/bin/lock_sway' \
-        timeout 600 'swaymsg "output * dpms off"' \
+        timeout 305 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
         before-sleep '~/.local/bin/lock_sway'
 
@@ -259,8 +269,7 @@ client.focused          #555555 #111111 #ffffff #999999   #555555
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
 for_window [app_id="mpv"] floating enable
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
-for_window [app_id="org.keepassxc.KeePassXC"] floating enable
-for_window [app_id="keepassxc"] floating enable
+for_window [title="Unlock Database - KeePassXC"] floating enable
 
 # looking glass config
 for_window [app_id="looking-glass-client"] border none
@@ -271,9 +280,9 @@ workspace 3 gaps inner 0
 assign [app_id="chromium"] 1
 assign [app_id="Alacritty"] 2
 assign [app_id="looking-glass-client"] 3
+assign [title="FreeRDP"] 8
 assign [app_id="nheko"] 9
-assign [app_id="thunderbird"] 9
-assign [title="FreeRDP"] 10
+assign [app_id="thunderbird"] 10
 
 include /etc/sway/config.d/*
 
