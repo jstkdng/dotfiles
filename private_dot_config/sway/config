@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term /usr/bin/urxvt
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -211,7 +211,7 @@ bindsym $mod+r mode "resize"
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
     bindsym XF86MonBrightnessUp exec 'brillo -u 100000 -A 5'
     bindsym XF86MonBrightnessDown exec 'brillo -u 100000 -U 5'
-	bindsym $mod+F12 exec '~/.local/bin/lock_sway'
+	bindsym $mod+F12 exec '/usr/bin/swaylock'
 
 #
 # Status Bar:
@@ -255,10 +255,10 @@ focus_follows_mouse no
 
 exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
 exec /usr/bin/swayidle -w \
-        timeout 300 '~/.local/bin/lock_sway' \
-        timeout 305 'swaymsg "output * dpms off"' \
+        timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-        before-sleep '~/.local/bin/lock_sway'
+        timeout 305 '/usr/bin/swaylock' \
+        before-sleep '/usr/bin/swaylock'
 
 exec python ~/.config/sway/startup.py
 
@@ -267,9 +267,12 @@ for_window [title="."] title_format "<b>%title</b> (%app_id)"
 client.focused          #555555 #111111 #ffffff #999999   #555555
 
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
-for_window [app_id="mpv"] floating enable
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
+
 for_window [title="Unlock Database - KeePassXC"] floating enable
+for_window [title="Open database"] floating enable
+
+for_window [class="Steam"] floating enable
 
 # looking glass config
 for_window [app_id="looking-glass-client"] border none
@@ -278,8 +281,10 @@ workspace 3 gaps inner 0
 
 # workspace assignment
 assign [app_id="chromium"] 1
-assign [app_id="Alacritty"] 2
+#assign [app_id="Alacritty"] 2
+assign [class="URxvt"] 2
 assign [app_id="looking-glass-client"] 3
+assign [class="Steam"] 7
 assign [title="FreeRDP"] 8
 assign [app_id="nheko"] 9
 assign [app_id="thunderbird"] 10

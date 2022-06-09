@@ -1,25 +1,30 @@
 #!/bin/bash
 # vi:ft=bash
 
-# Handy variables
-export QT_QPA_PLATFORMTHEME=gnome
+# Im config
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
+# wayland config
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME=gnome
 export MOZ_ENABLE_WAYLAND=1
+export XDG_CURRENT_DESKTOP=Unity
+#export WLR_NO_HARDWARE_CURSORS=1
 
 # Java variables
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# XDG Variables
-export XDG_CONFIG_DIR="${HOME}/.config"
-
 # Once running X
 unset RTERM
 
+# Load settings
+xrdb ~/.Xresources
+
 eval $(gnome-keyring-daemon --start --components=secrets)
 
-sway -V &> ~/.local/share/sway/sway.log
+sway &> ~/.local/share/sway/sway-$(date +%d-%m-%Y).log
+

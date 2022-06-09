@@ -3,6 +3,7 @@
 XDG_CONFIG_HOME=$HOME/.config
 XDG_CACHE_HOME=$HOME/.cache
 XDG_DATA_HOME=$HOME/.local/share
+XDG_CONFIG_DIR="${HOME}/.config"
 
 EDITOR=/usr/bin/nvim
 SUDO_EDITOR=$EDITOR
@@ -12,6 +13,4 @@ SYSTEMD_URLIFY=0
 
 PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/Code/go
-export XDG_CURRENT_DESKTOP=Unity
 
-export WLR_NO_HARDWARE_CURSORS=1
