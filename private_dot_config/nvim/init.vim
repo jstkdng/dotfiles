@@ -24,6 +24,7 @@ Plug 'jstkdng/vim-avr-syntax'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'leissa/vim-acme'
 Plug 'nfnty/vim-nftables'
+Plug 'HiPhish/guile.vim'
 
 call plug#end()
 
@@ -105,6 +106,11 @@ if ( $RTERM == 'linux' )
     set colorcolumn=0
     au VimEnter * AirlineToggle
 endif
+
+" disable providers
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
 
 " ----------------------
 " Plugin configuration  |

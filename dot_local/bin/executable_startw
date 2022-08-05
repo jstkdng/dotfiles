@@ -1,6 +1,9 @@
 #!/bin/bash
 # vi:ft=bash
 
+LOG_DIR=~/.local/share/sway/logs/
+LOG_FILE=$LOG_DIR/sway-$(date +%d-%m-%Y).log
+
 # Im config
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -12,19 +15,13 @@ export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=gnome
 export MOZ_ENABLE_WAYLAND=1
 export XDG_CURRENT_DESKTOP=Unity
-#export WLR_NO_HARDWARE_CURSORS=1
+export WLR_NO_HARDWARE_CURSORS=1
+export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots/
 
-# Java variables
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Once running X
+# Once running sway
 unset RTERM
-
-# Load settings
-xrdb ~/.Xresources
 
 eval $(gnome-keyring-daemon --start --components=secrets)
 
-sway &> ~/.local/share/sway/sway-$(date +%d-%m-%Y).log
+sway &> $LOG_FILE
 

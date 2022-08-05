@@ -1,4 +1,6 @@
 {
+    "clangd.semanticHighlighting": true,
+    "coc.preferences.semanticTokensHighlights": false,
     "languageserver": {
         "cmake": {
             "command": "cmake-language-server",

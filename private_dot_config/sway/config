@@ -136,8 +136,8 @@ input * xkb_numlock enable
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-	bindsym $mod+period workspace next
-	bindsym $mod+comma workspace prev
+    bindsym $mod+period workspace next
+    bindsym $mod+comma workspace prev
 
 #
 # Layout stuff:
@@ -205,28 +205,29 @@ bindsym $mod+r mode "resize"
 # Custom keybinds
 #
 
-	bindsym $mod+Shift+s exec 'grim -l 0 -g "$(slurp)" - | wl-copy'
+    bindsym $mod+Shift+s exec 'screenshot'
+    #bindsym --no-warn $mod+Shift+s [con_id=__focused__ class="parsecd"] nop
     bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
     bindsym XF86MonBrightnessUp exec 'brillo -u 100000 -A 5'
     bindsym XF86MonBrightnessDown exec 'brillo -u 100000 -U 5'
-	bindsym $mod+F12 exec '/usr/bin/swaylock'
+    bindsym $mod+F12 exec '/usr/bin/swaylock'
 
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-	swaybar_command "/usr/bin/waybar"
+    swaybar_command "/usr/bin/waybar"
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-	icon_theme Papirus-Dark
-	font Terminus 8
-	height 20
+    icon_theme Papirus-Dark
+    font Terminus 8
+    height 20
 
     colors {
         statusline #ffffff
@@ -241,7 +242,7 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'Cantarell 8'
     gsettings set $gnome-schema text-scaling-factor 1
-	gsettings set $gnome-schema color-scheme prefer-dark
+    gsettings set $gnome-schema color-scheme prefer-dark
 }
 
 output * adaptive_sync on
@@ -253,7 +254,9 @@ gaps inner 4
 
 focus_follows_mouse no
 
-exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
+exec xrdb ~/.Xresources
+#exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
+exec /usr/bin/wl-paste --watch clipman store --no-persist
 exec /usr/bin/swayidle -w \
         timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
@@ -272,21 +275,26 @@ for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 for_window [title="Unlock Database - KeePassXC"] floating enable
 for_window [title="Open database"] floating enable
 
-for_window [class="Steam"] floating enable
-
 # looking glass config
 for_window [app_id="looking-glass-client"] border none
+
+for_window [class="parsecd"] border none
+bindsym [con_id=__focused__ class="parsecd"] nop
+
 workspace 1 gaps inner 0
 workspace 3 gaps inner 0
+#workspace 4 gaps inner 0
 
 # workspace assignment
 assign [app_id="chromium"] 1
-#assign [app_id="Alacritty"] 2
 assign [class="URxvt"] 2
 assign [app_id="looking-glass-client"] 3
-assign [class="Steam"] 7
-assign [title="FreeRDP"] 8
-assign [app_id="nheko"] 9
+assign [app_id="looking-glass-client"] 4
+assign [class="Steam"] 8
+assign [class="dota2"] 7
+assign [class="dotnet"] 7
+assign [class="Terraria.bin.x86_64"] 7
+assign [title="FreeRDP"] 9
 assign [app_id="thunderbird"] 10
 
 include /etc/sway/config.d/*

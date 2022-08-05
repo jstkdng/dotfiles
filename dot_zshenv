@@ -11,6 +11,18 @@ SUDO_EDITOR=$EDITOR
 SYSTEMD_COLORS=1
 SYSTEMD_URLIFY=0
 
+export DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1=1
+export VDPAU_DRIVER=radeonsi
+
+# Java variables
+export JDK_JAVA_OPTIONS="-Dsun.java2d.opengl=true \
+    -Dawt.useSystemAAFontSettings=on \
+    -Dswing.aatext=true \
+    -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \
+    -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
+
 PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/Code/go
 

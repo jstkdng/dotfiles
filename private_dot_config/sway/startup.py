@@ -14,8 +14,8 @@ def main():
         "/usr/bin/udiskie",
         "/usr/bin/thunderbird",
         "/usr/bin/keepassxc",
-        "/usr/bin/nheko",
-        "/usr/bin/nextcloud",
+        "/usr/bin/element-desktop",
+        "/usr/bin/nextcloud"
     ]
 
     # wait for waybar to start

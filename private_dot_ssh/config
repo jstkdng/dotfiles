@@ -28,3 +28,12 @@ Host europa
 Host iris
 	User jk
 	Hostname iris
+
+Host moto
+    User user
+    Hostname 192.168.18.8
+    Port 2222
+
+Host guix
+    User jk
+    Hostname 192.168.18.117
