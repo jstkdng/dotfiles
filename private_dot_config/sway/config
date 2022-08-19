@@ -206,7 +206,6 @@ bindsym $mod+r mode "resize"
 #
 
     bindsym $mod+Shift+s exec 'screenshot'
-    #bindsym --no-warn $mod+Shift+s [con_id=__focused__ class="parsecd"] nop
     bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +2%'
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -2%'
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
@@ -279,7 +278,6 @@ for_window [title="Open database"] floating enable
 for_window [app_id="looking-glass-client"] border none
 
 for_window [class="parsecd"] border none
-bindsym [con_id=__focused__ class="parsecd"] nop
 
 workspace 1 gaps inner 0
 workspace 3 gaps inner 0

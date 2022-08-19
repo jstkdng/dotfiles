@@ -2,7 +2,7 @@
 # vi:ft=bash
 
 # Handy variables
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=gnome
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
@@ -29,6 +29,6 @@ unset RTERM
 
 eval $(gnome-keyring-daemon --start --components=secrets)
 
-numlockx &
+numlockx
 
 exec awesome &>> ~/.local/share/xorg/awesome.log

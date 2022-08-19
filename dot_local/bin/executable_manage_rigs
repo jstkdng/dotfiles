@@ -1,7 +1,7 @@
 #!/bin/bash
 
 declare -A rigs=(
-    ["hp"]="192.168.18.117"
+    ["hp"]="192.168.18.64"
     ["vm"]="192.168.18.218"
     ["msi"]="192.168.18.56"
 )
@@ -18,7 +18,7 @@ declare -A pass=(
     ["msi"]=1234
 )
 
-wlfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /v:"${rigs["$1"]}":3389 \
+xfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /v:"${rigs["$1"]}":3389 \
     /w:1904 /h:1164 /dynamic-resolution \
     /network:lan /cert:ignore \
     /sound:sys:pulse \

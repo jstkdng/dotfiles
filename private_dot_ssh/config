@@ -10,24 +10,24 @@ Host *
     ControlPath ~/.ssh/socket-%r@%h:%p
 
 Host aur aur.archlinux.org
-	User aur
-	Hostname aur.archlinux.org
+    User aur
+    Hostname aur.archlinux.org
 
 Host vps
-	User arch
-	Hostname 5.161.17.19
+    User arch
+    Hostname 5.161.17.19
 
 Host lyra
-	User arch
-	Hostname vin.ovh
+    User arch
+    Hostname vin.ovh
 
 Host europa
-	User alarm
-	Hostname europa
+    User jk
+    Hostname 192.168.18.107
 
 Host iris
-	User jk
-	Hostname iris
+    User jk
+    Hostname iris
 
 Host moto
     User user

@@ -14,7 +14,6 @@ def main():
         "/usr/bin/udiskie",
         "/usr/bin/thunderbird",
         "/usr/bin/keepassxc",
-        "/usr/bin/element-desktop",
         "/usr/bin/nextcloud"
     ]
 
