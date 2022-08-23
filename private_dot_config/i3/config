@@ -172,7 +172,7 @@ default_border pixel 2
 default_floating_border pixel 2
 
 gaps inner 4
-gaps top 25
+gaps top 24
 
 for_window [title="."] title_format "<b>%title</b>"
 client.focused          #555555 #111111 #ffffff #999999   #555555

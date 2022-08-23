@@ -257,12 +257,10 @@ exec xrdb ~/.Xresources
 #exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
 exec /usr/bin/wl-paste --watch clipman store --no-persist
 exec /usr/bin/swayidle -w \
-        timeout 300 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"' \
-        timeout 305 '/usr/bin/swaylock' \
+        timeout 300 '/usr/bin/swaylock' \
         before-sleep '/usr/bin/swaylock'
 
-exec python ~/.config/sway/startup.py
+#exec python ~/.config/sway/startup.py
 
 font pango:Terminus 8
 for_window [title="."] title_format "<b>%title</b> (%app_id)"

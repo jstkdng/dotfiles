@@ -18,7 +18,7 @@ declare -A pass=(
     ["msi"]=1234
 )
 
-xfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /v:"${rigs["$1"]}":3389 \
+wlfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /v:"${rigs["$1"]}":3389 \
     /w:1904 /h:1164 /dynamic-resolution \
     /network:lan /cert:ignore \
     /sound:sys:pulse \
