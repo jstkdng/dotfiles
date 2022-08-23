@@ -260,7 +260,7 @@ exec /usr/bin/swayidle -w \
         timeout 300 '/usr/bin/swaylock' \
         before-sleep '/usr/bin/swaylock'
 
-#exec python ~/.config/sway/startup.py
+exec python ~/.config/sway/startup.py
 
 font pango:Terminus 8
 for_window [title="."] title_format "<b>%title</b> (%app_id)"
