@@ -16,6 +16,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export XDG_CURRENT_DESKTOP="i3"
 export XDG_CONFIG_DIR="${HOME}/.config"
 
+# lock config
+export XSECURELOCK_FONT="Terminus"
+export XSECURELOCK_PASSWORD_PROMPT=time_hex
+
 # start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -32,4 +36,4 @@ eval $(gnome-keyring-daemon --start --components=secrets)
 numlockx
 xrdb ~/.Xresources
 
-exec i3
+exec i3 &> ~/.local/share/xorg/i3.log

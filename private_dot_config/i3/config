@@ -22,7 +22,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id /usr/bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -133,6 +133,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+F12 exec --no-startup-id xset s activate
 bindsym $mod+period workspace next
 bindsym $mod+comma workspace prev
+bindsym $mod+Shift+s exec --no-startup-id screenshot
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -164,15 +165,37 @@ bindsym $mod+r mode "resize"
 focus_follows_mouse no
 
 # start polybar
-exec_always --no-startup-id $HOME/.local/bin/polybar-launch.sh
+exec_always --no-startup-id ~/.config/i3/polybar-launch.sh
 
-exec --no-startup-id python ~/.config/i3/startup.py
+exec --no-startup-id ~/.config/i3/startup.sh
 
 default_border pixel 2
 default_floating_border pixel 2
 
 gaps inner 4
-gaps top 24
+gaps bottom 24
+
+#
+# worspace assignments
+#
+assign [class="Thunderbird"] 10
+for_window [title="splash"] floating enable
+for_window [title="Variety Images"] floating enable
+for_window [class="zoom"] floating enable
+assign [class="zoom"] 8
+
+# Gaming
+for_window [class="Steam"] floating enable
+assign [class="Steam"] 8
+assign [class="dota2"] 7
+assign [class="dotnet"] 7
+assign [class="Terraria.bin.x86_64"] 7
+
+# remote
+assign [class="xfreerdp"] 9
+assign [class="parsecd"] 9
+for_window [class="parsecd"] border none
+workspace 9 gaps inner 0
 
 for_window [title="."] title_format "<b>%title</b>"
 client.focused          #555555 #111111 #ffffff #999999   #555555

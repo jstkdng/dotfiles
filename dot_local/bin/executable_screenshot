@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#FILE=~/Pictures/$(date +%s).png
+
+#grim -l 0 -g "$(slurp)" $FILE
+#wl-copy -t image/png < $FILE
+
+maim -l -c 0.3,0.3,0.3,0.7 -s -m 1 | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
