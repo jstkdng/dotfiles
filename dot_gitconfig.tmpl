@@ -1,8 +1,8 @@
 # vi:ft=gitconfig
 [user]
-    name = JustKidding
-    email = jk@vin.ovh
-    signingkey = 69C39A7A54B828CBEE37DC57EF06BB7EBE3CA982!
+    name = {{ .git.name }}
+    email = {{ .git.email }}
+    signingkey = {{ .gpgkey }}!
 [commit]
     gpgsign = true
 [diff]
