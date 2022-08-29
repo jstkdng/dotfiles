@@ -166,6 +166,7 @@ focus_follows_mouse no
 
 # start polybar
 exec_always --no-startup-id ~/.config/i3/polybar-launch.sh
+exec_always --no-startup-id ~/.config/i3/import-gsettings
 
 exec --no-startup-id ~/.config/i3/startup.sh
 
