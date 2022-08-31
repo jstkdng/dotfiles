@@ -179,7 +179,7 @@ gaps bottom 24
 #
 # worspace assignments
 #
-assign [class="Thunderbird"] 10
+assign [class="thunderbird"] 10
 for_window [title="splash"] floating enable
 for_window [title="Variety Images"] floating enable
 for_window [class="zoom"] floating enable
@@ -188,6 +188,7 @@ assign [class="zoom"] 8
 # Gaming
 for_window [class="Steam"] floating enable
 assign [class="Steam"] 8
+assign [title="Steam"] 8
 assign [class="dota2"] 7
 assign [class="dotnet"] 7
 assign [class="Terraria.bin.x86_64"] 7
