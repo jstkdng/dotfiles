@@ -183,6 +183,7 @@ assign [class="thunderbird"] 10
 for_window [title="splash"] floating enable
 for_window [title="Variety Images"] floating enable
 for_window [class="zoom"] floating enable
+for_window [class="PacketTracer"] floating enable
 assign [class="zoom"] 8
 
 # Gaming
