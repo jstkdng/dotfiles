@@ -170,8 +170,8 @@ exec_always --no-startup-id ~/.config/i3/import-gsettings
 
 exec --no-startup-id ~/.config/i3/startup.sh
 
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border normal 1
 
 gaps inner 4
 gaps bottom 24
@@ -186,6 +186,8 @@ for_window [class="zoom"] floating enable
 for_window [class="PacketTracer"] floating enable
 assign [class="zoom"] 8
 
+title_align center
+
 # Gaming
 for_window [class="Steam"] floating enable
 assign [class="Steam"] 8
@@ -195,10 +197,12 @@ assign [class="dotnet"] 7
 assign [class="Terraria.bin.x86_64"] 7
 
 # remote
-assign [class="xfreerdp"] 9
+assign [class="xfreerdp"] 3
 assign [class="parsecd"] 9
 for_window [class="parsecd"] border none
 workspace 9 gaps inner 0
 
 for_window [title="."] title_format "<b>%title</b>"
-client.focused          #555555 #111111 #ffffff #999999   #555555
+client.focused          #555555 #000000 #ffffff #aaaaaa #555555
+client.unfocused        #555555 #333333 #888888 #888888 #555555
+
