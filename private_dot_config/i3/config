@@ -170,8 +170,10 @@ exec_always --no-startup-id ~/.config/i3/import-gsettings
 
 exec --no-startup-id ~/.config/i3/startup.sh
 
+# border config
 default_border pixel 1
 default_floating_border normal 1
+for_window [class="." tiling] border pixel 1
 
 gaps inner 4
 gaps bottom 24

@@ -25,4 +25,5 @@ xfreerdp /u:"${users["$1"]}" /p:"${pass["$1"]}" /v:"${rigs["$1"]}":3389 \
     /gfx:AVC444 /bpp:32 /gdi:sw \
     /drive:RDP,$HOME/RDP \
     /wm-class:xfreerdp \
+    /log-level:ERROR \
     +clipboard
