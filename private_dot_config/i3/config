@@ -206,5 +206,6 @@ workspace 9 gaps inner 0
 
 for_window [title="."] title_format "<b>%title</b>"
 client.focused          #555555 #000000 #ffffff #aaaaaa #555555
+client.focused_inactive #555555 #333333 #888888 #888888 #555555
 client.unfocused        #555555 #333333 #888888 #888888 #555555
 

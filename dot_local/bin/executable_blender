@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export PATH=/opt/rocm/hip/bin:$PATH
+/usr/bin/blender "$@"
+
