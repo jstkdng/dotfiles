@@ -6,9 +6,14 @@ run() {
     (${args[@]:1} &> $LOG)&
 }
 
-sleep 3
+barfile=/tmp/polybar-$(whoami).log
 
-run picom /usr/bin/picom --experimental-backends
+until [ -f $barfile ]
+do
+     sleep 1
+done
+
+run picom /usr/bin/picom
 run thunderbird /usr/bin/thunderbird
 run polkit-gnome /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run xss-lock /usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l -- /usr/bin/xsecurelock

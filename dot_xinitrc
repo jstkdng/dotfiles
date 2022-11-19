@@ -8,10 +8,6 @@ export QT_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-# Java variables
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
-export _JAVA_AWT_WM_NONREPARENTING=1
-
 # XDG Variables
 export XDG_CURRENT_DESKTOP="i3"
 export XDG_CONFIG_DIR="${HOME}/.config"
