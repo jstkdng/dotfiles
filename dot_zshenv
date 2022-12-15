@@ -11,6 +11,7 @@ SUDO_EDITOR=$EDITOR
 SYSTEMD_COLORS=1
 SYSTEMD_URLIFY=0
 
-PATH=$HOME/.local/bin:$PATH
+PATH="$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/Code/go
+export npm_config_prefix="$HOME/.local"
 
