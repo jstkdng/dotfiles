@@ -13,7 +13,6 @@ Plug 'ngg/vim-gn'
 Plug 'chr4/nginx.vim'
 Plug 'alx741/vinfo'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jstkdng/vim-avr-syntax'
 Plug 'leissa/vim-acme'
 Plug 'nfnty/vim-nftables'
@@ -206,25 +205,8 @@ autocmd BufNewFile,BufRead *.ini.tmpl set filetype=dosini
 " Coc
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-jedi']
 
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust" },
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
-
-  highlight = {
-      enable = true
-  }
-}
-EOF
-
 lua require('plugins')
+lua require('nvim-treesitter-setup')
 lua require('nvim-tree-setup')
 lua require('lualine-setup')
 lua require('bufferline-setup')
