@@ -194,8 +194,13 @@ let g:loaded_node_provider = 0
 " Plugin configuration  |
 " ----------------------
 
-" Nerdtree
+" NvimTree
 map <C-a> :NvimTreeToggle<CR>
+let g:nvim_tree_auto_close=1
+
+" move among buffers with CTRL
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Chezmoi templates
