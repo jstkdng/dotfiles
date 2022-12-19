@@ -1,6 +1,4 @@
 {
-    "clangd.semanticHighlighting": true,
-    "coc.preferences.semanticTokensHighlights": false,
     "languageserver": {
         "cmake": {
             "command": "cmake-language-server",
@@ -21,5 +19,10 @@
             }
         }
     },
-  "jedi.executable.command": "/usr/bin/jedi-language-server"
+  "jedi.executable.command": "/usr/bin/jedi-language-server",
+  "texlab.build.onSave": true,
+  "texlab.rootDirectory": ".",
+  "texlab.build.args": [""],
+  "texlab.chktex.onEdit": true,
+  "texlab.chktex.onOpenAndSave": true
 }
