@@ -58,10 +58,13 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 theme.notification_icon_size = 40
+theme.notification_max_width = 200
+theme.notification_max_height = 100
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.icon_theme = "Papirus"
+theme.systray_icon_spacing = 5
 
 return theme
 

@@ -1,5 +1,4 @@
 #!/bin/zsh
-# vi:ft=bash
 
 function crlftolf()
 {
@@ -10,7 +9,10 @@ function crlftolf()
 
 function copy()
 {
-    #command wl-copy < ${1}
+    file=$1
+    mime=$(file -b --mime-type $file)
+    xclip -selection clipboard -t $mime $file
+    echo "Copied file to clipboard!"
     command xclip < ${1}
     echo "Copied file ${1} to clipboard!"
 }

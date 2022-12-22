@@ -47,18 +47,27 @@ end
 beautiful.init(gears.filesystem.get_configuration_dir() .. "/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
+local terminal = "alacritty"
+local editor = os.getenv("EDITOR") or "nano"
+local editor_cmd = terminal .. " -e " .. editor
 
 awful.spawn.with_shell("python ~/.config/awesome/startup.py")
+
+awful.spawn.once("~/.config/i3/startup.sh")
+
+local gnome_schema = "org.gnome.desktop.interface"
+awful.spawn("gsettings set" .. gnome_schema .. "gtk-theme 'Yaru-blue-dark'", false)
+awful.spawn("gsettings set" .. gnome_schema .. "icon-theme 'Papirus-Dark'", false)
+awful.spawn("gsettings set" .. gnome_schema .. "font-name 'Cantarell 8'", false)
+awful.spawn("gsettings set" .. gnome_schema .. "text-scaling-factor 1", false)
+awful.spawn("gsettings set" .. gnome_schema .. "color-scheme prefer-dark", false)
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+local modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -69,7 +78,7 @@ awful.layout.layouts = {
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+local mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -133,6 +142,9 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = 20 })
 
+    local mytray = wibox.widget.systray()
+    mytray:set_base_size(16)
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -143,7 +155,8 @@ awful.screen.connect_for_each_screen(function(s)
         wibox.widget.separator({ visible = false }), -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            mytray,
+            wibox.widget.separator({forced_width=30,color="#000000"}),
             mytextclock
         }
     }
@@ -158,7 +171,7 @@ root.buttons(gears.table.join(
 -- }}}
 
 -- {{{ Key bindings
-globalkeys = gears.table.join(
+local globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, ",",   awful.tag.viewprev,
@@ -244,7 +257,7 @@ globalkeys = gears.table.join(
     -- User
     awful.key(
         { modkey }, "F12",
-        function () awful.spawn.with_shell("xsecurelock", false) end,
+        function () awful.spawn("xsecurelock", false) end,
         { description = "Lock Screen", group = "user"}
     ),
     awful.key(
@@ -284,7 +297,7 @@ globalkeys = gears.table.join(
 	)
 )
 
-clientkeys = gears.table.join(
+local clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
@@ -378,7 +391,7 @@ for i = 1, 9 do
     )
 end
 
-clientbuttons = gears.table.join(
+local clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
     end),

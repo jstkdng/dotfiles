@@ -24,5 +24,10 @@
   "texlab.rootDirectory": ".",
   "texlab.build.args": [""],
   "texlab.chktex.onEdit": true,
-  "texlab.chktex.onOpenAndSave": true
+  "texlab.chktex.onOpenAndSave": true,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.telemetry.enable": false,
+  "Lua.workspace.library": ["/usr/share/nvim/runtime/lua", "/usr/share/nvim/runtime/lua/lsp", "/usr/share/awesome/lib"],
+  "Lua.diagnostics.enable": true,
+  "Lua.diagnostics.globals": ["vim", "awesome", "client", "root", "screen"]
 }
