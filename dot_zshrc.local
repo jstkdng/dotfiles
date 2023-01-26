@@ -23,10 +23,20 @@ zstyle ':prompt:grml:*:items:user' post '%b%f'
 zstyle ':prompt:grml:*:items:host' pre '%B%F{blue}'
 zstyle ':prompt:grml:*:items:host' post '%b%f'
 
+# space before percent
+zstyle ':prompt:grml:*:items:percent' pre ' '
+
+# virtualenv
+function virtual_env_prompt () {
+    REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
+}
+grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
+
 # compact path
 grml_theme_add_token simplepath '[ %15<...<%1~%<< ] ' '%B%F{white}' '%f%b'
-zstyle ':prompt:grml:left:setup' items rc change-root user at host simplepath vcs percent
-## End Prompt
+
+# set prompt
+zstyle ':prompt:grml:left:setup' items rc change-root user at host simplepath vcs virtual-env newline percent
 
 # arrow key autocomplete
 zstyle ':completion:*' menu select

@@ -12,6 +12,8 @@ SYSTEMD_COLORS=1
 SYSTEMD_URLIFY=0
 
 PATH="$HOME/.local/bin:$PATH"
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="lab"
 export GOPATH=$HOME/Code/go
 export npm_config_prefix="$HOME/.local"
 
