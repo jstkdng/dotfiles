@@ -1,18 +1,26 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+require("plugins")
+require("bufferline-setup")
+require("lualine-setup")
+require("material-theme-setup")
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.cmd("filetype plugin indent on")
 
--- some servers have issues with backup files
-vim.opt.backup = false
-vim.opt.writebackup = false
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    underline = true,
+    update_in_insert = true,
+    severity_sort = false,
+    float = { border = "rounded" },
+})
 
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience
-vim.opt.updatetime = 300
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.opt.updatetime = 250
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 -- Always show signcolumn, otherwise it would shift the text each time
 -- diagnostics appear/become resolved
@@ -25,7 +33,7 @@ vim.opt.scrolloff = 10
 vim.opt.colorcolumn = "81"
 vim.cmd.highlight("ColorColumn guibg=gray")
 
-vim.cmd.colorscheme("darcula-solid")
+vim.cmd.colorscheme("material")
 vim.opt.termguicolors = true
 
 vim.opt.mouse = "a"
@@ -49,4 +57,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("lspconfig-setup")
+require("clangd-setup")
 require("nvim-cmp-setup")
+require("nvim-tree-setup")
+require("nvim-treesitter-setup")
