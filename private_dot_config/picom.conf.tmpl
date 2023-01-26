@@ -220,11 +220,9 @@ blur-background-exclude = [
 backend = "glx";
 
 # Enable/disable VSync.
-{{ if (eq .chezmoi.hostname "iris") }}
+
 vsync = true;
-{{ else if (eq .chezmoi.hostname "vesta")}}
-vsync = false;
-{{ end }}
+
 
 # Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
 # dbus = false
