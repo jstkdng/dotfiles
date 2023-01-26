@@ -26,6 +26,8 @@ vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {
 -- diagnostics appear/become resolved
 vim.opt.signcolumn = "yes"
 
+vim.opt.hidden = true
+
 -- better editing
 vim.opt.number = true
 vim.opt.wrap = false

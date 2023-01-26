@@ -1,6 +1,6 @@
 require("bufferline").setup({
     options = {
-        diagnostics = "coc",
+        diagnostics = "nvim_lsp",
         offsets = {
             {
                 filetype = "NvimTree",
@@ -11,11 +11,4 @@ require("bufferline").setup({
         },
     }
 })
-
-
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.cmd("filetype plugin indent on")
-
 
