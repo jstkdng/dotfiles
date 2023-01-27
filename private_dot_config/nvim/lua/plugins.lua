@@ -31,6 +31,8 @@ return require("packer").startup(function(use)
         end,
     }
 
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -42,5 +44,13 @@ return require("packer").startup(function(use)
 
     use "p00f/clangd_extensions.nvim"
 
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    -- legacy syntax
+    use 'nfnty/vim-nftables'
+    use 'jstkdng/vim-avr-syntax'
+    use 'chr4/nginx.vim'
+    use 'ngg/vim-gn'
+    use 'mtdl9/vim-log-highlighting'
+    use 'HiPhish/guile.vim'
+    use 'leissa/vim-acme'
+    use 'alx741/vinfo'
 end)
