@@ -1,4 +1,8 @@
 vim.g.material_style = "darker"
+vim.opt.colorcolumn = "81"
+vim.opt.termguicolors = true
+
+vim.cmd.highlight("ColorColumn guibg=gray")
 
 require('material').setup({
     plugins = { -- Uncomment the plugins that you use to highlight them
@@ -10,7 +14,7 @@ require('material').setup({
         -- "indent-blankline",
         -- "lspsaga",
         -- "mini",
-        -- "neogit",
+        "neogit",
         "nvim-cmp",
         -- "nvim-navic",
         "nvim-tree",
@@ -23,3 +27,4 @@ require('material').setup({
     lualine_style = 'stealth'
 })
 
+vim.cmd.colorscheme("material")

@@ -41,4 +41,6 @@ return require("packer").startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 
     use "p00f/clangd_extensions.nvim"
+
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 end)
