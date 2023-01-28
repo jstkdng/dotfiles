@@ -95,9 +95,16 @@ lspconfig.sumneko_lua.setup({
     }
 })
 
-lspconfig.pyright.setup({
+lspconfig.pylsp.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    settings = {
+        plugins = {
+            flake8 = {
+                enabled = true
+            }
+        }
+    }
 })
 
 lspconfig.cmake.setup({
