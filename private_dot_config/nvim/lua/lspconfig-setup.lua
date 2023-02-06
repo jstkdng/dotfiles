@@ -87,9 +87,7 @@ lspconfig.sumneko_lua.setup({
                 library = {
                     "/usr/share/awesome/lib",
                     "/usr/lib/lua-language-server/meta/3rd/lfs/",
-                    vim.api.nvim_get_runtime_file("", true),
-                    vim.fn.stdpath("data") .. "/site/pack/packer/opt/emmylua-nvim",
-                    vim.fn.stdpath("config")
+                    vim.api.nvim_get_runtime_file("", true)
                 },
                 checkThirdParty = false
             },
