@@ -116,3 +116,21 @@ lspconfig.tsserver.setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
+
+lspconfig.texlab.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        texlab = {
+            build = {
+                onSave = true,
+                args = {""}
+            },
+            chktex = {
+                onEdit = true,
+                onOpenAndSave = true
+            },
+            rootDirectory = "."
+        }
+    }
+})

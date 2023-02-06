@@ -32,6 +32,7 @@ return require("packer").startup(function(use)
     }
 
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use 'mfussenegger/nvim-jdtls'
 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
