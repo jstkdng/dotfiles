@@ -2,8 +2,12 @@ require("clangd_extensions").setup({
     server = {
         cmd = {
             "clangd",
-            "--header-insertion=never"
+            "--header-insertion=never",
+            "--completion-style=detailed"
         }
+    },
+    extensions = {
+        autoSetHints = false
     }
 })
 

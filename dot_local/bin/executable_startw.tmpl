@@ -21,7 +21,8 @@ export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots/
 unset RTERM
 
 eval $(gnome-keyring-daemon --start --components=secrets)
-
-export GBM_BACKEND=nvidia-drm
-sway --unsupported-gpu &> $LOG_FILE
-
+{{ if (eq .chezmoi.hostname "iris") }}
+exec sway-nvidia &> $LOG_FILE
+{{ else if (eq .chezmoi.hostname "vesta")}}
+exec sway &> $LOG_FILE
+{{ end }}

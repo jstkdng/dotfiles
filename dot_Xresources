@@ -1,3 +1,4 @@
+UXTerm.termName: xterm-256color
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
 
