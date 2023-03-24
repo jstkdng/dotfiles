@@ -16,4 +16,4 @@ export PYSPARK_DRIVER_PYTHON="jupyter"
 export PYSPARK_DRIVER_PYTHON_OPTS="lab"
 export GOPATH=$HOME/Code/go
 export npm_config_prefix="$HOME/.local"
-
+export JDK_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true"
