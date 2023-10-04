@@ -9,7 +9,7 @@ polybar-msg cmd quit
 log=/tmp/polybar-$USER.log
 
 # Launch mybar
-echo "---" | tee -a $log
-polybar mybar 2>&1 | tee -a $log & disown
-
-echo "Bars launched..."
+echo "---" | tee -a "$log"
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m /usr/bin/polybar mybar 2>&1 | tee -a "$log" & disown
+done

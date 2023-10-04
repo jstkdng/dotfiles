@@ -48,10 +48,10 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 0
-    y: 1
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -68,7 +68,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  #opacity: 1.0
+  opacity: 1.0
 
   # Startup Mode (changes require restart)
   #
@@ -119,7 +119,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font Propo
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -131,7 +131,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font Propo
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -142,7 +142,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font Propo
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -153,17 +153,15 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font Propo
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
   # Point size
-{{ if (eq .chezmoi.hostname "iris") }}
-  size: 8
-{{ else if (eq .chezmoi.hostname "vesta")}}
+
   size: 12
-{{ end }}
+
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -336,7 +334,7 @@ colors:
   # Whether or not `window.opacity` applies to all cell backgrounds or only to
   # the default background. When set to `true` all cells will be transparent
   # regardless of their background color.
-  #transparent_background_colors: false
+  transparent_background_colors: true
 
 # Bell
 #
