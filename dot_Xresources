@@ -75,3 +75,4 @@ URxvt.colorBD:  #ffffff
 *.color7:       #d3d7cf
 *.color15:      #eeeeec
 
+Xcursor.size: 16
