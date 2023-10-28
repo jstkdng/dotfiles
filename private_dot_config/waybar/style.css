@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Terminus, Helvetica, Arial, sans-serif;
+    font-family: FontAwesome, Terminus, Noto Sans Mono CJK JP, Helvetica, Arial, sans-serif;
     font-size: 10px;
 }
 
@@ -36,6 +36,7 @@ window#waybar.chromium {
 
 #workspaces button {
     padding: 0 5px;
+    min-width: 20px;
     background-color: transparent;
     color: #ffffff;
     /* Use box-shadow instead of border so the text isn't offset */

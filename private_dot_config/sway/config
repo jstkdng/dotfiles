@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term /usr/bin/urxvt
+set $term /usr/bin/alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -30,6 +30,9 @@ set $menu rofi -show drun | dmenu | xargs swaymsg exec --
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output DP-3 mode 2560x1440@180Hz adaptive_sync on
+#output * adaptive_sync on
+# output HDMI-A-1 pos 1920 0
 
 ### Idle configuration
 #
@@ -112,28 +115,39 @@ input * xkb_numlock enable
 #
 # Workspaces:
 #
+
+set $ws1 "1:1"
+set $ws2 "2:2"
+set $ws3 "3:3"
+set $ws4 "4:4"
+set $ws5 "5:5"
+set $ws6 "6:6"
+set $ws7 "7:7"
+set $ws8 "8:8"
+set $ws9 "9:9"
+set $ws10 "10:0"
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     bindsym $mod+period workspace next
@@ -219,7 +233,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command "/usr/bin/waybar"
-    position top
+    position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -237,16 +251,15 @@ bar {
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Yaru-blue-dark'
+    gsettings set $gnome-schema gtk-theme 'Materia-dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'Cantarell 8'
     gsettings set $gnome-schema text-scaling-factor 1
     gsettings set $gnome-schema color-scheme prefer-dark
 }
 
-output * adaptive_sync on
-
-default_border pixel 2
+default_border pixel 1
+default_floating_border normal 1
 titlebar_border_thickness 2
 
 gaps inner 4
@@ -254,13 +267,14 @@ gaps inner 4
 focus_follows_mouse no
 
 exec xrdb ~/.Xresources
-#exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
+exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
 exec /usr/bin/wl-paste --watch clipman store --no-persist
-exec /usr/bin/swayidle -w \
-        timeout 300 '/usr/bin/swaylock' \
-        before-sleep '/usr/bin/swaylock'
+#exec /usr/bin/swayidle -w \
+#        timeout 300 '/usr/bin/swaylock' \
+#        before-sleep '/usr/bin/swaylock'
 
-exec python ~/.config/sway/startup.py
+#exec python ~/.config/sway/startup.py
+exec ~/.config/sway/startup.sh
 
 font pango:Terminus 8
 for_window [title="."] title_format "<b>%title</b> (%app_id)"
@@ -277,21 +291,21 @@ for_window [app_id="looking-glass-client"] border none
 
 for_window [class="parsecd"] border none
 
-workspace 1 gaps inner 0
-workspace 3 gaps inner 0
+#workspace 1 gaps inner 0
+#workspace 3 gaps inner 0
 #workspace 4 gaps inner 0
 
 # workspace assignment
-assign [app_id="chromium"] 1
-assign [class="URxvt"] 2
-assign [app_id="looking-glass-client"] 3
-assign [app_id="looking-glass-client"] 4
-assign [class="Steam"] 8
-assign [class="dota2"] 7
-assign [class="dotnet"] 7
-assign [class="Terraria.bin.x86_64"] 7
-assign [title="FreeRDP"] 9
-assign [app_id="thunderbird"] 10
+#assign [app_id="chromium"] 1
+#assign [class="URxvt"] 2
+#assign [app_id="looking-glass-client"] 3
+#assign [app_id="looking-glass-client"] 4
+#assign [class="Steam"] 8
+#assign [class="dota2"] 7
+#assign [class="dotnet"] 7
+#assign [class="Terraria.bin.x86_64"] 7
+#assign [title="FreeRDP"] 9
+#assign [app_id="thunderbird"] 10
 
 include /etc/sway/config.d/*
 

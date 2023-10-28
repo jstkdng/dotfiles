@@ -56,7 +56,8 @@ shadow-exclude = [
     "(class_g = 'Nextcloud') && (window_type = 'dialog') && argb",
     "(class_g = 'thunderbird') && (window_type = 'utility' || window_type = 'popup_menu') && argb",
     "(class_g = 'PacketTracer') && (window_type = 'utility' || window_type = 'popup_menu') && argb",
-    "class_g = 'org.jackhuang.hmcl.Launcher'"
+    "class_g = 'org.jackhuang.hmcl.Launcher'",
+    "name = ''"
 ];
 
 # Specify a list of conditions of windows that should have no shadow painted over, such as a dock window.
@@ -220,11 +221,9 @@ blur-background-exclude = [
 backend = "glx";
 
 # Enable/disable VSync.
-{{ if (eq .chezmoi.hostname "iris") }}
-vsync = true;
-{{ else if (eq .chezmoi.hostname "vesta")}}
+
 vsync = false;
-{{ end }}
+
 
 # Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
 # dbus = false
