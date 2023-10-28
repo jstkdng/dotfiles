@@ -5,7 +5,8 @@ LOG_DIR=~/.local/share/sway/logs/
 LOG_FILE=$LOG_DIR/sway-$(date +%d-%m-%Y).log
 
 # Im config
-export GTK_IM_MODULE=fcitx
+#export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=wayland
 export QT_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
@@ -14,7 +15,7 @@ export XMODIFIERS=@im=fcitx
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export MOZ_ENABLE_WAYLAND=1
-export XDG_CURRENT_DESKTOP=Unity
+export XDG_CURRENT_DESKTOP=sway
 export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots/
 
 export WLR_NO_HARDWARE_CURSORS=1

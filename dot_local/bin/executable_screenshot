@@ -2,9 +2,9 @@
 
 FILE=~/Pictures/Screenshots/$(date +%s).png
 
-#grim -l 0 -g "$(slurp)" $FILE
-#wl-copy -t image/png < $FILE
+grim -l 0 -g "$(slurp)" "$FILE"
+wl-copy -t image/png < "$FILE"
 
-maim -l -c 0.3,0.3,0.3,0.7 -s -m 10 -B -u $FILE
-xclip -selection clipboard -t image/png $FILE
+#maim -l -c 0.3,0.3,0.3,0.7 -s -m 10 -B -u $FILE
+#xclip -selection clipboard -t image/png $FILE
 
