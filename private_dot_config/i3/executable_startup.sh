@@ -3,12 +3,12 @@
 run() {
     args=("$@")
     LOG=~/.local/share/xorg/$1.log
-    (${args[@]:1} &> $LOG)&
+    ("${args[@]:1}" &> "$LOG")&
 }
 
 barfile=/tmp/polybar-$(whoami).log
 
-until [ -f $barfile ]
+until [ -f "$barfile" ]
 do
      sleep 1
 done

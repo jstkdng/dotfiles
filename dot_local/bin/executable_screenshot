@@ -5,6 +5,6 @@ FILE=~/Pictures/Screenshots/$(date +%s).png
 #grim -l 0 -g "$(slurp)" "$FILE"
 #wl-copy -t image/png < "$FILE"
 
-maim -c 0.6,0.6,0.6 -s -m 10 -B -u -b 4 "$FILE"
+maim -l -c 0.3,0.3,0.3,0.6 -s -m 10 -B -u -b 2 "$FILE"
 xclip -selection clipboard -t image/png "$FILE"
 
