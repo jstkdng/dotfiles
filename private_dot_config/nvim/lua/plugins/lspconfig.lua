@@ -35,6 +35,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = ev.buf,
+        callback = function()
+            vim.lsp.buf.format { async = false }
+        end
+    })
+
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }

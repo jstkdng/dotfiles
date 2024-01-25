@@ -49,7 +49,8 @@ return {
             vim.opt.termguicolors = true
             vim.cmd.highlight("ColorColumn guibg=gray")
             vim.cmd.colorscheme("material")
-            vim.opt.colorcolumn = "101"
+            vim.opt.colorcolumn = "121"
+            vim.opt.cursorline = true
             require("bufferline").setup(opts)
         end
     },

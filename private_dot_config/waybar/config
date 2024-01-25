@@ -3,7 +3,7 @@
     "height": 24,
     "spacing": 0,
     "position": "bottom",
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "hyprland/workspaces"],
     "modules-center": [],
     "modules-right": ["custom/xmr", "idle_inhibitor", "pulseaudio", "backlight", "battery", "battery#bat2", "tray", "clock"],
     "sway/mode": {
@@ -11,6 +11,11 @@
     },
     "sway/workspaces": {
         "format": "{name}"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "idle_inhibitor": {
         "format": "{icon}",
