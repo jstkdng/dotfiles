@@ -5,19 +5,19 @@ LOG_DIR=~/.local/share/sway/logs/
 LOG_FILE=$LOG_DIR/sway-$(date +%d-%m-%Y).log
 
 # Im config
-#export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 # wayland config
 export QT_QPA_PLATFORM="wayland;xcb"
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 export MOZ_ENABLE_WAYLAND=1
 export XDG_CURRENT_DESKTOP=sway
 export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots/
 
-#export WLR_NO_HARDWARE_CURSORS=1
+export WLR_NO_HARDWARE_CURSORS=1
 #export WLR_DRM_NO_ATOMIC=1
 
 # Once running sway
@@ -25,5 +25,5 @@ unset RTERM
 
 eval "$(gnome-keyring-daemon --start --components=secrets)"
 
-exec Hyprland &> "$LOG_FILE"
+exec sway &> "$LOG_FILE"
 

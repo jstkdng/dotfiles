@@ -33,7 +33,7 @@ return {
             "nvim-tree/nvim-web-devicons"
         },
         opts = {
-             options = {
+            options = {
                 diagnostics = "nvim_lsp",
                 offsets = {
                     {
