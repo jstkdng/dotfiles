@@ -22,7 +22,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/alacritty
+bindsym $mod+Return exec --no-startup-id /usr/bin/kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -127,13 +127,13 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -p -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
 bindsym $mod+F12 exec --no-startup-id xset s activate
 bindsym $mod+period workspace next
 bindsym $mod+comma workspace prev
-bindsym $mod+Shift+s exec --no-startup-id screenshot
+bindsym --release $mod+Shift+s exec --no-startup-id screenshot
 # Moving workspaces between screens 
 bindsym $mod+p move workspace to output right
 
