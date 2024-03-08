@@ -14,11 +14,11 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term /usr/bin/alacritty
+set $term /usr/bin/kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun | dmenu | xargs swaymsg exec --
+set $menu rofi -show drun | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -33,10 +33,12 @@ set $menu rofi -show drun | dmenu | xargs swaymsg exec --
 output DP-1 {
     mode 2560x1440@180Hz
     adaptive_sync on
+    pos 1200 0
 }
 
 output DP-2 {
     transform 270
+    pos 0 0
 }
 # output HDMI-A-1 pos 1920 0
 
@@ -44,10 +46,6 @@ output DP-2 {
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#         timeout 300 'swaylock -f' \
-#         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#         before-sleep 'swaylock -f'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -262,7 +260,6 @@ focus_follows_mouse no
 
 exec xrdb ~/.Xresources
 exec /usr/bin/wl-paste -t text --watch clipman store --no-persist
-exec /usr/bin/swayidle -w timeout 300 '/usr/bin/swaylock' before-sleep '/usr/bin/swaylock'
 
 exec ~/.config/sway/startup.sh
 
@@ -270,6 +267,7 @@ font pango:Terminus 8
 for_window [title="."] title_format "<b>%title</b> (%app_id)"
 client.focused          #555555 #111111 #ffffff #999999   #555555
 
+for_window [shell="xwayland"] title_format "[XWayland] %title"
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
 for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 for_window [title="Unlock Database - KeePassXC"] floating enable
@@ -294,7 +292,11 @@ for_window [class="parsecd"] border none
 #assign [class="dotnet"] 7
 #assign [class="Terraria.bin.x86_64"] 7
 #assign [title="FreeRDP"] 9
-#assign [app_id="thunderbird"] 10
+assign [app_id="thunderbird"] workspace $ws10
+
+shadows enable
+shadows_on_csd enable
+shadow_blur_radius 60
+corner_radius 10
 
 include /etc/sway/config.d/*
-

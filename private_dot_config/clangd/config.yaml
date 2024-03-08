@@ -1,3 +1,2 @@
 CompileFlags:
-  Add: -Wno-unknown-warning-option
-  Remove: [-m*, -f*]
+  Add: [-std=c++20, -fsized-deallocation, -Wno-unknown-warning-option]
