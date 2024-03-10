@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
-FILE=~/Pictures/Screenshots/$(date +%s).png
+file=$HOME/Pictures/Screenshots/ss-$(date +%Y-%m-%d-%T).png
 
-#grim -l 0 -g "$(slurp)" "$FILE"
-#wl-copy -t image/png < "$FILE"
-
-maim -l -c 0.3,0.3,0.3,0.6 -s -m 10 -B -u -b 2 "$FILE"
-xclip -selection clipboard -t image/png "$FILE"
+if [[ $XDG_SESSION_TYPE = x11 ]]; then
+    scrot -f -e "xclip -selection clipboard -t image/png -i \$f" -l style=dash,width=2 -s -F "$file"
+elif [[ $XDG_SESSION_TYPE = wayland ]]; then
+    grim -l 0 -g "$(slurp)" "$file"
+    wl-copy -t image/png < "$file"
+fi
 

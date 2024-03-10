@@ -17,9 +17,9 @@ run picom /usr/bin/picom
 run thunderbird /usr/bin/thunderbird
 run polkit-gnome /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run xss-lock /usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l -- /usr/bin/xsecurelock
-run geoclue /usr/lib/geoclue-2.0/demos/agent
-run redshift /usr/bin/redshift-gtk
-run mpd /usr/bin/mpd
+#run geoclue /usr/lib/geoclue-2.0/demos/agent
+#run redshift /usr/bin/redshift-gtk
+#run mpd /usr/bin/mpd
 run variety /usr/bin/variety
 run fcitx5 /usr/bin/fcitx5
 run nextcloud /usr/bin/nextcloud

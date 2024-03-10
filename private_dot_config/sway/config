@@ -296,7 +296,10 @@ assign [app_id="thunderbird"] workspace $ws10
 
 shadows enable
 shadows_on_csd enable
-shadow_blur_radius 60
+shadow_blur_radius 30
+shadow_color #000000ff
 corner_radius 10
+layer_effects "waybar" blur enable; shadows enable
+layer_effects "rofi" blur enable; shadows enable; corner_radius 10
 
 include /etc/sway/config.d/*
