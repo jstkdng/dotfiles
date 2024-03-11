@@ -2,7 +2,7 @@
     "_vim_": { "modeline": "/* vim: set ft=jsonc: */" },
     "height": 24,
     "spacing": 0,
-    "position": "top",
+    "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode", "hyprland/workspaces"],
     "modules-center": [],
     "modules-right": ["custom/xmr", "idle_inhibitor", "pulseaudio", "backlight", "battery", "battery#bat2", "tray", "clock"],
