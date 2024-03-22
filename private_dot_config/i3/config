@@ -193,9 +193,8 @@ assign [class="zoom"] workspace $ws8
 title_align center
 
 # Gaming
-for_window [class="Steam"] floating enable
-assign [class="Steam"] workspace $ws8
-assign [title="Steam"] workspace $ws8
+for_window [class="steam"] floating enable
+assign [class="steam"] workspace $ws8
 assign [class="dota2"] workspace $ws7
 assign [class="dotnet"] workspace $ws7
 assign [class="Terraria.bin.x86_64"] workspace $ws7
