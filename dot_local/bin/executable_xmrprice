@@ -1,4 +1,4 @@
 #!/bin/bash
 
 price=$(curl --silent https://community.rino.io/prices/xmrusd/ -o - | jq .price)
-printf "%.2f\n" $price
+printf "%.2f\n" "$price"
