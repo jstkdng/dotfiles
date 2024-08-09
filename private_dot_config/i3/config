@@ -178,7 +178,7 @@ default_floating_border normal 1
 for_window [class="." tiling] border pixel 1
 
 gaps inner 4
-gaps bottom 24
+gaps top 24
 
 #
 # worspace assignments
@@ -188,6 +188,7 @@ for_window [title="splash"] floating enable
 for_window [title="Variety Images"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="PacketTracer"] floating enable
+for_window [class="Anydesk"] floating enable
 assign [class="zoom"] workspace $ws8
 
 title_align center
