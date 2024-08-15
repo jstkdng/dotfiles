@@ -178,7 +178,7 @@ default_floating_border normal 1
 for_window [class="." tiling] border pixel 1
 
 gaps inner 4
-gaps bottom 24
+gaps top 24
 
 #
 # worspace assignments
@@ -189,6 +189,7 @@ for_window [title="Variety Images"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="PacketTracer"] floating enable
 for_window [class="Anydesk"] floating enable
+for_window [class="jetbrains-toolbox"] border pixel 1
 assign [class="zoom"] workspace $ws8
 
 title_align center
@@ -204,7 +205,6 @@ assign [class="Terraria.bin.x86_64"] workspace $ws7
 assign [class="xfreerdp"] workspace $ws3
 assign [class="parsecd"] workspace $ws9
 for_window [class="parsecd"] border none
-workspace $ws9 gaps inner 0
 
 for_window [title="."] title_format "<b>%title</b>"
 client.focused          #555555 #000000 #ffffff #aaaaaa #555555
