@@ -178,7 +178,7 @@ default_floating_border normal 1
 for_window [class="." tiling] border pixel 1
 
 gaps inner 12
-gaps top 25
+#gaps top 25
 
 #
 # worspace assignments

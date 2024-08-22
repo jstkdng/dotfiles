@@ -403,7 +403,8 @@
 #[fullscreen_show_critical]
 #    msg_urgency = critical
 #    fullscreen = show
-
+[fullscreen]
+    fullscreen = pushback
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
