@@ -110,13 +110,14 @@ return {
                 "clangd",
                 "--header-insertion=never",
                 "--completion-style=detailed",
-                "--enable-config"
+                "--enable-config",
+                "--background-index"
             }
         })
 
         lspconfig.cmake.setup {}
 
-        lspconfig.tsserver.setup {}
+        lspconfig.ts_ls.setup {}
 
         lspconfig.bashls.setup {}
     end

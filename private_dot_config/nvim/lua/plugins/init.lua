@@ -1,4 +1,7 @@
 return {
   { "folke/lazy.nvim", version = "*" },
-  "folke/neodev.nvim"
+  {
+    "folke/lazydev.nvim",
+    ft = "lua"
+  }
 }

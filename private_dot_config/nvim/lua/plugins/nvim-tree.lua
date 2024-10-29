@@ -9,7 +9,7 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
-    tag = "nightly",
+    branch = "master",
     opts = {
         sort_by = "case_sensitive",
         view = {
