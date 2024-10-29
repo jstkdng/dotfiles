@@ -1,3 +1,7 @@
 CompileFlags:
-  Add: [-std=c++23, -Wno-unknown-warning-option, -fsized-deallocation]
+  Add: [-std=c++23, -Wno-unknown-warning-option, -fsized-deallocation, -D__cpp_concepts=202002]
   Remove: [-m*, -f*]
+Index:
+  StandardLibrary: Yes
+Diagnostics:
+  MissingIncludes: Strict

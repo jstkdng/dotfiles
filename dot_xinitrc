@@ -1,5 +1,4 @@
 #!/bin/sh
-# vi:ft=bash
 
 # Handy variables
 export QT_QPA_PLATFORMTHEME=qt5ct
