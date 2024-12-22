@@ -10,7 +10,6 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-vim.opt.rtp:prepend("/usr/share/vim/vimfiles/")
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -40,3 +39,5 @@ vim.g.loaded_node_provider = 0
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup("plugins")
+
+vim.opt.rtp:prepend("/usr/share/vim/vimfiles/")

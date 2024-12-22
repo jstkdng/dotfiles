@@ -12,12 +12,13 @@ export XMODIFIERS=@im=fcitx
 
 # wayland config
 export QT_QPA_PLATFORM="wayland;xcb"
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 export MOZ_ENABLE_WAYLAND=1
-export XDG_CURRENT_DESKTOP=sway
+export MOZ_DISABLE_RDD_SANDBOX=1
+#export XDG_CURRENT_DESKTOP=sway
 export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots/
 
-export WLR_NO_HARDWARE_CURSORS=1
+#export WLR_NO_HARDWARE_CURSORS=1
 #export WLR_DRM_NO_ATOMIC=1
 
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -28,5 +29,5 @@ unset RTERM
 
 eval "$(gnome-keyring-daemon --start --components=secrets)"
 
-exec sway &> "$LOG_FILE"
+exec Hyprland &> "$LOG_FILE"
 
