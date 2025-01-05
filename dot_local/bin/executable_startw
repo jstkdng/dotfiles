@@ -15,11 +15,7 @@ export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt6ct
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DISABLE_RDD_SANDBOX=1
-#export XDG_CURRENT_DESKTOP=sway
 export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots/
-
-#export WLR_NO_HARDWARE_CURSORS=1
-#export WLR_DRM_NO_ATOMIC=1
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
@@ -27,7 +23,7 @@ export AWT_TOOLKIT=MToolkit
 # Once running sway
 unset RTERM
 
-eval "$(gnome-keyring-daemon --start --components=secrets)"
+#eval "$(gnome-keyring-daemon --start --components=secrets)"
 
 exec Hyprland &> "$LOG_FILE"
 
