@@ -6,7 +6,7 @@ run() {
     ("${args[@]:1}" &> "$LOG")&
 }
 
-barfile=/tmp/polybar-$(whoami).log
+barfile=/tmp/polybar-$USER.log
 
 until [ -f "$barfile" ]
 do
