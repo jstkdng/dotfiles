@@ -3,6 +3,3 @@ CompileFlags:
   Remove: [-m*, -f*]
 Index:
   StandardLibrary: Yes
-Diagnostics:
-  MissingIncludes: Strict
-  UnusedIncludes: Strict
