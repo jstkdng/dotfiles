@@ -297,4 +297,6 @@ else
     fi
 fi
 
+cp "$WP" /opt/lightdm-wallpaper
+
 exit 0
