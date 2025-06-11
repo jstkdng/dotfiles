@@ -29,7 +29,6 @@ while ! check_waybar_status; do
 done
 
 run variety.desktop
-run com.nextcloud.desktopclient.nextcloud.desktop
 run org.keepassxc.KeePassXC.desktop
 run org.mozilla.Thunderbird.desktop
 run /usr/bin/udiskie
