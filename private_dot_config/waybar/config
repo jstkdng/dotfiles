@@ -5,7 +5,7 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode", "hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["custom/xmr", "idle_inhibitor", "pulseaudio", "backlight", "battery", "battery#bat2", "tray", "clock"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "battery#bat2", "tray", "clock"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
