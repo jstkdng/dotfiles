@@ -68,9 +68,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 return {
     "neovim/nvim-lspconfig",
     config = function(_, opts)
-        local lspconfig = require("lspconfig")
-
-        lspconfig.lua_ls.setup({
+        vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
                     runtime = {
@@ -105,7 +103,7 @@ return {
                 vim.opt_local.cinoptions = "L0"
             end
         })
-        lspconfig.clangd.setup({
+        vim.lsp.config("clangd", {
             cmd = {
                 "clangd",
                 "--header-insertion=never",
@@ -115,10 +113,10 @@ return {
             }
         })
 
-        lspconfig.cmake.setup {}
-
-        lspconfig.ts_ls.setup {}
-
-        lspconfig.bashls.setup {}
+        vim.lsp.enable("lua_ls")
+        vim.lsp.enable("clangd")
+        vim.lsp.enable("cmake")
+        vim.lsp.enable("ts_ls")
+        vim.lsp.enable("bashls")
     end
 }
