@@ -18,11 +18,12 @@
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "spacing": 5
     },
     "tray": {
         "icon-size": 16,

@@ -118,5 +118,6 @@ return {
         vim.lsp.enable("cmake")
         vim.lsp.enable("ts_ls")
         vim.lsp.enable("bashls")
+        vim.lsp.enable("ruby_lsp")
     end
 }
