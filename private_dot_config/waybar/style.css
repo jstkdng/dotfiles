@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Terminus, Noto Sans Mono CJK JP, Helvetica, Arial, sans-serif;
-    font-size: 10px;
+    font-family: FiraCode Nerd Font, Noto Sans Mono CJK JP, Helvetica, Arial, sans-serif, 'Font Awesome 7 Free';
+    font-size: 12px;
 }
 
 window#waybar {
