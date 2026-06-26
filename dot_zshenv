@@ -13,7 +13,7 @@ export SYSTEMD_URLIFY=0
 export SYSTEMD_EDITOR=$EDITOR
 
 export RUSTICL_ENABLE=radeonsi
-export GEM_HOME="$(gem env user_gemhome)"
+#export GEM_HOME="$(gem env user_gemhome)"
 
 export PATH="$GEM_HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/Code/go

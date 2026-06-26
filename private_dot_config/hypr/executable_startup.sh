@@ -28,7 +28,7 @@ while ! check_waybar_status; do
     sleep 1
 done
 
-run variety.desktop
+#run variety.desktop
 run org.keepassxc.KeePassXC.desktop
 run org.mozilla.Thunderbird.desktop
 run /usr/bin/udiskie
