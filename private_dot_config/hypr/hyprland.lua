@@ -53,6 +53,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("uwsm app -- /usr/bin/wl-paste --type text --watch cliphist store")
   hl.exec_cmd("uwsm app -- /usr/bin/wl-paste --type image --watch cliphist store")
   hl.exec_cmd("~/.config/hypr/startup.sh")
+  hl.exec_cmd("~/.config/hypr/import-gsettings")
   hl.exec_cmd("uwsm finalize")
 end)
 
@@ -383,5 +384,11 @@ hl.window_rule({
 hl.window_rule({
     name = "float-nc",
     match = { title = "Nextcloud" },
+    float = true
+})
+
+hl.window_rule({
+    name = "float-keepassxc",
+    match = { title = "Unlock Database - KeePassXC" },
     float = true
 })
